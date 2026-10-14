@@ -1,6 +1,6 @@
 /* =============================================
    KEYPRIME WINDOW REPAIR — JS
-   Fixed hero · Snow FX · FAQ char reveal
+   Fixed hero · Snow FX · Form · Scroll FX
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -32,15 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   toggle.addEventListener('click', flipNav);
   overlay.addEventListener('click', flipNav);
-  const navLinks = menu.querySelectorAll('.navbar__link:not(.navbar__link--cta)');
-  navLinks.forEach(a => {
+  menu.querySelectorAll('.navbar__link').forEach(a => {
     a.addEventListener('click', () => {
       if (menu.classList.contains('open')) flipNav();
     });
   });
-  menu.querySelectorAll('.navbar__link--cta').forEach(a =>
-    a.addEventListener('click', () => menu.classList.contains('open') && flipNav())
-  );
 
   /* ── Scroll-in animations ── */
   const animEls = document.querySelectorAll('.anim-in, .anim-slide-right');
@@ -55,14 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   animEls.forEach(el => animObs.observe(el));
 
-  /* ── Show side tab only between hero and CTA ── */
+  /* ── Hero entry animations ── */
+  const heroAnims = document.querySelectorAll('.hero-anim');
+  heroAnims.forEach(el => {
+    const d = parseInt(el.dataset.delay) || 0;
+    setTimeout(() => el.classList.add('visible'), 300 + d);
+  });
+
+  /* ── Show side tab between page-content start and contact section ── */
   const sideTab = document.querySelector('.side-tab');
-  const ctaEl = document.querySelector('.cta');
+  const contactSection = document.getElementById('contact');
   const pageContent = document.querySelector('.page-content');
-  if (sideTab && ctaEl && pageContent) {
+  if (sideTab && contactSection && pageContent) {
     function checkSideTab() {
       const pageTop = pageContent.getBoundingClientRect().top;
-      const ctaTop = ctaEl.getBoundingClientRect().top;
+      const ctaTop = contactSection.getBoundingClientRect().top;
       const inMiddle = pageTop <= 0 && ctaTop > 0;
       sideTab.classList.toggle('side-tab--visible', inMiddle);
     }
@@ -70,35 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
     checkSideTab();
   }
 
-  /* ── Hide hero content behind CTA section ── */
-  const ctaSection = document.querySelector('.cta');
-  if (ctaSection && heroEl) {
+  /* ── Hide hero content when contact is in view ── */
+  if (contactSection && heroEl) {
     const ctaObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         heroEl.classList.toggle('hero--hide-content', e.isIntersecting);
       });
     }, { threshold: 0.05 });
-    ctaObs.observe(ctaSection);
+    ctaObs.observe(contactSection);
   }
-
-  /* ── Mobile comparison accordion ── */
-  const compAccordion = document.getElementById('compAccordion');
-  if (compAccordion) {
-    compAccordion.addEventListener('click', e => {
-      const item = e.target.closest('.comparison__acc-item');
-      if (!item) return;
-      const wasOpen = item.classList.contains('open');
-      compAccordion.querySelectorAll('.comparison__acc-item.open').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  }
-
-  /* ── Hero entry animations ── */
-  const heroAnims = document.querySelectorAll('.hero-anim');
-  heroAnims.forEach(el => {
-    const d = parseInt(el.dataset.delay) || 0;
-    setTimeout(() => el.classList.add('visible'), 300 + d);
-  });
 
   /* ── Smooth anchor scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -113,145 +96,175 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ═══════════════════════════════════════════
-     SNOWFALL EFFECT — canvas-based
-     ═══════════════════════════════════════════ */
-  const canvas = document.getElementById('snowCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let flakes = [], raf = null, snowActive = false;
-  const N = 80;
-
-  function resize() { canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight; }
-  resize();
-  addEventListener('resize', resize);
-
-  function mkFlake() {
-    return {
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height * -1,
-      r: 1 + Math.random() * 3,
-      sp: .5 + Math.random() * 1.5,
-      op: .15 + Math.random() * .45,
-      wx: Math.random() * .5 - .25,
-      phase: Math.random() * Math.PI * 2
-    };
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const f of flakes) {
-      ctx.beginPath();
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${f.op})`;
-      ctx.fill();
-      f.y += f.sp;
-      f.x += Math.sin(f.phase) * f.wx;
-      f.phase += .01;
-      if (f.y > canvas.height + 10) {
-        f.y = -f.r * 2;
-        f.x = Math.random() * canvas.width;
-      }
-    }
-    raf = requestAnimationFrame(draw);
-  }
-
-  function startSnow() {
-    if (snowActive) return;
-    snowActive = true;
-    canvas.classList.add('active');
-    flakes = Array.from({ length: N }, mkFlake);
-    flakes.forEach(f => { f.y = Math.random() * canvas.height; });
-    draw();
-  }
-  function stopSnow() {
-    if (!snowActive) return;
-    snowActive = false;
-    canvas.classList.remove('active');
-    cancelAnimationFrame(raf);
-  }
-
-  startSnow();
-
-  function snowCheck() {
-    if (window.scrollY < window.innerHeight * 0.85) {
-      startSnow();
-    } else {
-      stopSnow();
-    }
-  }
-  window.addEventListener('scroll', snowCheck, { passive: true });
-
-  /* ═══════════════════════════════════════════
-     COMPARISON — paired hover across columns
-     ═══════════════════════════════════════════ */
-  const kpItems = document.querySelectorAll('.comparison__col--kp .comparison__list li');
-  const otherItems = document.querySelectorAll('.comparison__col--others .comparison__list li');
-
-  kpItems.forEach((li, i) => {
-    li.addEventListener('mouseenter', () => {
-      li.classList.add('hover-active');
-      if (otherItems[i]) otherItems[i].classList.add('hover-active');
-    });
-    li.addEventListener('mouseleave', () => {
-      li.classList.remove('hover-active');
-      if (otherItems[i]) otherItems[i].classList.remove('hover-active');
-    });
-  });
-  otherItems.forEach((li, i) => {
-    li.addEventListener('mouseenter', () => {
-      li.classList.add('hover-active');
-      if (kpItems[i]) kpItems[i].classList.add('hover-active');
-    });
-    li.addEventListener('mouseleave', () => {
-      li.classList.remove('hover-active');
-      if (kpItems[i]) kpItems[i].classList.remove('hover-active');
-    });
-  });
-
-  /* ═══════════════════════════════════════════
-     FAQ ACCORDION — auto-close + char reveal
-     ═══════════════════════════════════════════ */
-  const faqItems = document.querySelectorAll('.faq__item');
-
-  function wrapChars(answerEl) {
-    const p = answerEl.querySelector('p');
-    if (!p || p.querySelector('.char')) return;
-    const text = p.textContent;
-    p.innerHTML = '';
-    for (let i = 0; i < text.length; i++) {
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = text[i] === ' ' ? ' ' : text[i];
-      span.style.animationDelay = `${i * 4}ms`;
-      p.appendChild(span);
-    }
-  }
-
-  faqItems.forEach(item => {
-    item.querySelector('summary').addEventListener('click', e => {
+  /* ── Contact form submit ── */
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const wasOpen = item.hasAttribute('open');
-
-      faqItems.forEach(other => {
-        if (other !== item && other.hasAttribute('open')) {
-          other.removeAttribute('open');
-          const op = other.querySelector('.faq__answer p');
-          if (op && op.querySelector('.char')) op.innerHTML = op.textContent;
-        }
-      });
-
-      if (!wasOpen) {
-        item.setAttribute('open', '');
-        wrapChars(item.querySelector('.faq__answer'));
-      } else {
-        item.removeAttribute('open');
-        const p = item.querySelector('.faq__answer p');
-        if (p && p.querySelector('.char')) p.innerHTML = p.textContent;
-      }
+      const btn = form.querySelector('button[type="submit"]');
+      const origText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Quote Requested!';
+        btn.style.background = '#22c55e';
+        btn.style.borderColor = '#22c55e';
+        setTimeout(() => {
+          btn.textContent = origText;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+          form.reset();
+        }, 3000);
+      }, 1200);
     });
-  });
+  }
 
-  const openFaq = document.querySelector('.faq__item[open] .faq__answer');
-  if (openFaq) wrapChars(openFaq);
+  /* ═══════════════════════════════════════════
+     SCROLL FROST — spread-based intensity
+     Ice texture generated once (small canvas),
+     mask-size grows from edges toward center
+     ═══════════════════════════════════════════ */
+  (function initFrost() {
+    var el = document.getElementById('frost');
+    if (!el) return;
+
+    /* ── Generate ice crystal texture (512×512) ── */
+    var S = 512;
+    var tc = document.createElement('canvas');
+    tc.width = S; tc.height = S;
+    var t = tc.getContext('2d');
+
+    function branch(x, y, len, ang, depth, max) {
+      if (depth > max || len < 2) return;
+      var ex = x + Math.cos(ang) * len;
+      var ey = y + Math.sin(ang) * len;
+      t.beginPath(); t.moveTo(x, y); t.lineTo(ex, ey); t.stroke();
+      var nl = len * (0.6 + Math.random() * 0.12);
+      branch(ex, ey, nl, ang + (Math.random() - 0.5) * 0.2, depth + 1, max);
+      if (len > 5) {
+        var sp = 0.4 + Math.random() * 0.35;
+        if (Math.random() < 0.8) branch(ex, ey, nl * 0.75, ang + sp, depth + 1, max);
+        if (Math.random() < 0.8) branch(ex, ey, nl * 0.75, ang - sp, depth + 1, max);
+      }
+      if (depth > 1 && Math.random() < 0.3 && len > 8) {
+        var s = Math.random() < 0.5 ? 1 : -1;
+        branch(ex, ey, nl * 0.4, ang + s * 0.7, depth + 2, max);
+      }
+    }
+
+    function crystal(cx, cy, size, arms) {
+      var maxD = size > 50 ? 5 : 4;
+      for (var a = 0; a < arms; a++) {
+        var ang = (Math.PI * 2 / arms) * a + (Math.random() - 0.5) * 0.25;
+        branch(cx, cy, size * 0.4, ang, 0, maxD);
+      }
+    }
+
+    /* Fill the full 512×512 with crystals spread across it */
+    t.lineCap = 'round';
+
+    /* Glow pass */
+    t.shadowColor = 'rgba(200,225,245,0.5)';
+    t.shadowBlur = 10;
+    t.lineWidth = 2.5;
+    t.strokeStyle = 'rgba(190,215,240,0.1)';
+    for (var i = 0; i < 15; i++) {
+      crystal(Math.random() * S, Math.random() * S, 50 + Math.random() * 70, 5 + Math.floor(Math.random() * 2));
+    }
+
+    /* Medium pass */
+    t.shadowBlur = 4;
+    t.lineWidth = 1.2;
+    t.strokeStyle = 'rgba(210,235,255,0.2)';
+    for (var i = 0; i < 25; i++) {
+      crystal(Math.random() * S, Math.random() * S, 30 + Math.random() * 55, 5 + Math.floor(Math.random() * 3));
+    }
+
+    /* Sharp detail pass */
+    t.shadowBlur = 1;
+    t.lineWidth = 0.5;
+    t.strokeStyle = 'rgba(220,240,255,0.28)';
+    for (var i = 0; i < 35; i++) {
+      crystal(Math.random() * S, Math.random() * S, 15 + Math.random() * 40, 4 + Math.floor(Math.random() * 3));
+    }
+
+    /* Bright highlights */
+    t.shadowColor = 'rgba(230,245,255,0.4)';
+    t.shadowBlur = 6;
+    t.lineWidth = 1;
+    t.strokeStyle = 'rgba(235,245,255,0.32)';
+    for (var i = 0; i < 10; i++) {
+      crystal(Math.random() * S, Math.random() * S, 40 + Math.random() * 60, 6);
+    }
+
+    /* Apply texture to all corners */
+    var dataUrl = tc.toDataURL('image/png');
+    var corners = el.querySelectorAll('.frost__corner');
+    for (var c = 0; c < corners.length; c++) {
+      corners[c].style.backgroundImage = 'url(' + dataUrl + ')';
+    }
+
+    /* ── Scroll-driven spread ── */
+    var frost = 0;
+    var target = 0;
+    var accum = 0;
+    var prevY = window.scrollY;
+    var decayTimer = null;
+    var raf = null;
+
+    /* MIN/MAX mask size — controls how far ice spreads
+       At frost=0 → 0% (invisible)
+       At frost=1 → 110% (nearly full screen from each corner) */
+    function applyFrost(v) {
+      el.style.setProperty('--frost', v);
+      var pct = (v * 110) + '%';
+      for (var c = 0; c < corners.length; c++) {
+        corners[c].style.webkitMaskSize = pct + ' ' + pct;
+        corners[c].style.maskSize = pct + ' ' + pct;
+      }
+    }
+
+    function tick() {
+      if (frost < target) {
+        frost = Math.min(frost + 0.03, target);
+      } else if (frost > target) {
+        frost = Math.max(frost - 0.002, target);
+      }
+
+      applyFrost(frost);
+
+      if (frost > 0.001 || target > 0) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        frost = 0;
+        applyFrost(0);
+        raf = null;
+      }
+    }
+
+    function startTick() {
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+
+    /* Start with 0 spread */
+    applyFrost(0);
+
+    window.addEventListener('scroll', function() {
+      var nowY = window.scrollY;
+      var delta = Math.abs(nowY - prevY);
+      prevY = nowY;
+
+      accum += delta * 0.0008;
+      target = Math.min(accum, 1);
+
+      clearTimeout(decayTimer);
+      decayTimer = setTimeout(function() {
+        target = 0;
+        accum = 0;
+      }, 700);
+
+      startTick();
+    }, { passive: true });
+  })();
 });

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Winter Window Repair &amp; Replacement | Keyprime</title>
-  <meta name="description" content="Stop cold drafts this winter. Keyprime offers expert window repair, replacement, and weatherization services across Minnesota. Free inspections. True Lifetime Warranty.">
+  <title>Keyprime Window Repair | Winter Window Solutions in Minnesota</title>
+  <meta name="description" content="Stop cold drafts this winter. Keyprime Window Repair offers expert window repair, replacement, and weatherization services across Minnesota and Wisconsin. Free quotes available.">
+  <meta name="keywords" content="window repair, cold draft, winter windows, Minnesota window replacement, energy efficient windows, weatherization, Keyprime">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -36,32 +37,41 @@
           <a href="https://keyprimeroofing.com" class="navbar__link">Home</a>
         </li>
         <li class="navbar__item navbar__item--dropdown">
-          <a href="#services" class="navbar__link">Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <a href="https://keyprimeroofing.com/about" class="navbar__link">About Us <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
           <ul class="navbar__dropdown">
-            <li><a href="#services">Window Repair</a></li>
-            <li><a href="#services">Window Replacement</a></li>
-            <li><a href="#services">Winter Weatherization</a></li>
+            <li><a href="https://keyprimeroofing.com/about">Our Story</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
           </ul>
         </li>
-        <li class="navbar__item">
-          <a href="#why" class="navbar__link">Why Keyprime</a>
-        </li>
-        <li class="navbar__item">
-          <a href="#windows" class="navbar__link">Window Types</a>
-        </li>
-        <li class="navbar__item">
-          <a href="#faq" class="navbar__link">FAQ</a>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/services" class="navbar__link">Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="#services">Window Repair</a></li>
+            <li><a href="https://keyprimeroofing.com/services/roofing">Roofing</a></li>
+            <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
+            <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
+            <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
+            <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
+          </ul>
         </li>
         <li class="navbar__item navbar__item--dropdown">
-          <a href="https://keyprimeroofing.com/contact" class="navbar__link">Contact <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <a href="https://keyprimeroofing.com/projects" class="navbar__link">Projects <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="https://keyprimeroofing.com/projects">Gallery</a></li>
+            <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/contact" class="navbar__link">Contact Us <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
           <ul class="navbar__dropdown">
             <li><a href="https://keyprimeroofing.com/contact">Get in Touch</a></li>
-            <li><a href="https://keyprimeroofing.com/free-estimate">Free Estimate</a></li>
+            <li><a href="#contact">Free Estimate</a></li>
             <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
           </ul>
         </li>
         <li class="navbar__item">
-          <a href="https://keyprimeroofing.com/free-estimate" class="navbar__link navbar__link--cta">FREE WINDOW INSPECTION</a>
+          <a href="#contact" class="navbar__link navbar__link--cta">FREE WINDOW INSPECTION</a>
         </li>
       </ul>
     </div>
@@ -72,87 +82,45 @@
   <div class="nav-overlay" id="navOverlay"></div>
 
   <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <canvas id="snowCanvas" class="snow-canvas"></canvas>
+  <header class="hero" id="hero">
     <div class="hero__media">
-      <div class="hero__bg"></div>
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="assets/hero-bg.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero__overlay"></div>
 
-    <!-- Hero text (left side) -->
     <div class="hero__content">
-      <h1 class="hero__heading hero-anim">Don't Let the Cold<br>Creep In</h1>
-      <div class="hero__body">
-        <h2 class="hero__sub hero-anim" data-delay="200">Minnesota winters push windows to their limit</h2>
-        <p class="hero__text hero-anim" data-delay="400">Drafty windows drive up your heating bills, let cold air steal your comfort, and cause condensation, frost, and ice buildup that damages frames and promotes mold growth.</p>
-        <p class="hero__text hero-anim" data-delay="550">Keyprime helps homeowners diagnose window problems fast. We repair, replace, and weatherize your windows so your home stays warm, efficient, and comfortable all winter.</p>
+      <div class="hero__badge hero-anim">
+        WINTER SEASON SPECIAL
       </div>
-      <a href="https://keyprimeroofing.com/free-estimate" class="btn btn--hero-fill hero-anim" data-delay="700">FREE WINDOW INSPECTION</a>
-    </div>
-
-    <!-- Quote (top right) -->
-    <div class="hero__quote hero-anim" data-delay="400">
-      <p class="hero__quote-text"><em>Keyprime is a Minnesota window specialist. We inspect your windows for free, identify every draft and efficiency issue, and recommend repairs or replacements that fit your budget.</em></p>
-      <span class="hero__qm">&rdquo;</span>
-    </div>
-
-    <!-- Winter Stats Card (bottom right) -->
-    <div class="hero__wh hero-anim" data-delay="500">
-      <h3 class="wh__title">Winter Window Facts</h3>
-      <div class="wh__card">
-        <span class="wh__corner wh__corner--tl"></span>
-        <span class="wh__corner wh__corner--tr"></span>
-        <span class="wh__corner wh__corner--bl"></span>
-        <span class="wh__corner wh__corner--br"></span>
-        <div class="wh__header">
-          <div class="wh__location">
-            <svg class="wh__pin" viewBox="0 0 24 24" width="14" height="14" fill="#DF2531" stroke="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-            <span class="wh__city">Minnesota</span>
-          </div>
+      <h1 class="hero__heading hero-anim" data-delay="100">Don't Let the Cold<br>Creep In This Winter</h1>
+      <div class="hero__body">
+        <p class="hero__text hero-anim" data-delay="300">Minnesota winters are brutal. Drafty windows drive up your heating bills and let the cold steal your comfort. Keyprime Window Repair stops the cold at the glass — with expert repairs, replacements, and weatherization that keep your home warm all season.</p>
+      </div>
+      <div class="hero__cta hero-anim" data-delay="500">
+        <a href="#contact" class="btn btn--hero-fill">FREE WINDOW INSPECTION</a>
+      </div>
+      <div class="hero__stats hero-anim" data-delay="700">
+        <div class="hero__stat">
+          <span class="hero__stat-num">15+</span>
+          <span class="hero__stat-label">Years Experience</span>
         </div>
-        <div class="wh__events">
-          <div class="wh__stat">
-            <div class="wh__stat-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#DF2531" stroke-width="1.5"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
-            </div>
-            <div class="wh__stat-info">
-              <div class="wh__stat-value">-30&deg;F</div>
-              <div class="wh__stat-label">Average Minnesota Winter Low</div>
-            </div>
-          </div>
-          <div class="wh__stat">
-            <div class="wh__stat-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#DF2531" stroke-width="1.5"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-            <div class="wh__stat-info">
-              <div class="wh__stat-value">25-30%</div>
-              <div class="wh__stat-label">Extra Heating Cost from Drafty Windows</div>
-            </div>
-          </div>
-          <div class="wh__stat">
-            <div class="wh__stat-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#DF2531" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 12h20M12 3v18"/></svg>
-            </div>
-            <div class="wh__stat-info">
-              <div class="wh__stat-value">$300-$600</div>
-              <div class="wh__stat-label">Avg. Extra Cost Per Winter Season</div>
-            </div>
-          </div>
-          <div class="wh__stat">
-            <div class="wh__stat-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#DF2531" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="wh__stat-info">
-              <div class="wh__stat-value">TRUE&trade;</div>
-              <div class="wh__stat-label">Lifetime Warranty on All Work</div>
-            </div>
-          </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">5,000+</span>
+          <span class="hero__stat-label">Windows Installed</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">TRUE</span>
+          <span class="hero__stat-label">Lifetime Warranty&trade;</span>
         </div>
       </div>
     </div>
 
     <!-- Partner logos marquee -->
-    <div class="hero__partners">
+    <div class="hero__partners hero-anim" data-delay="800">
       <div class="partners__track">
         <img src="assets/logos/gaf.png" alt="GAF">
         <img src="assets/logos/bbb.png" alt="BBB">
@@ -168,185 +136,204 @@
         <img src="assets/logos/velux.png" alt="Velux">
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- ===== SCROLLABLE PAGE CONTENT ===== -->
+  <!-- ===== PAGE CONTENT ===== -->
   <div class="page-content">
 
-    <!-- ===== SERVICES (Window Services) ===== -->
+    <!-- Winter Alert Banner -->
+    <section class="winter-alert" id="winter-alert">
+      <div class="container">
+        <div class="winter-alert__content">
+          <div class="winter-alert__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="winter-alert__text">
+            <strong>Cold drafts cost Minnesota homeowners an average of $300–$600 extra per winter.</strong>
+            <span>Schedule your free window inspection before the first freeze.</span>
+          </div>
+          <a href="#contact" class="btn btn--primary">Book Inspection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
     <section class="services" id="services">
       <div class="services__overlay"></div>
       <div class="container services__content">
         <span class="tag tag--light anim-in">What We Do</span>
         <h2 class="services__heading anim-in" data-delay="100">Expert Window Services for Every Situation</h2>
+        <p class="services__sub anim-in" data-delay="150">From a single cracked pane to a full-home window upgrade, we handle it all with precision craftsmanship and materials built for Minnesota's climate.</p>
         <div class="services__grid">
           <div class="service-card anim-slide-right" data-delay="0">
             <div class="service-card__icon">
-              <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="8" y="8" width="32" height="32" rx="2"/>
-                <line x1="24" y1="8" x2="24" y2="40"/>
-                <line x1="8" y1="24" x2="40" y2="24"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+                <line x1="24" y1="6" x2="24" y2="42"/>
+                <line x1="6" y1="24" x2="42" y2="24"/>
                 <path d="M14 14l4 4M30 14l4 4" stroke-dasharray="2 2"/>
               </svg>
             </div>
             <h3>Window Repair</h3>
             <p>Broken seals, foggy glass, stuck sashes, damaged frames — we diagnose and fix the problem fast so you stay warm without a full replacement.</p>
+            <ul class="service-card__features">
+              <li>Broken glass replacement</li>
+              <li>Seal &amp; weatherstrip repair</li>
+              <li>Hardware &amp; mechanism fixes</li>
+              <li>Frame rot restoration</li>
+            </ul>
           </div>
-          <div class="service-card anim-slide-right" data-delay="150">
+          <div class="service-card service-card--featured anim-slide-right" data-delay="150">
+            <div class="service-card__badge">Most Popular</div>
             <div class="service-card__icon">
-              <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="8" y="8" width="32" height="32" rx="2"/>
-                <line x1="24" y1="8" x2="24" y2="40"/>
-                <line x1="8" y1="24" x2="40" y2="24"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+                <line x1="24" y1="6" x2="24" y2="42"/>
+                <line x1="6" y1="24" x2="42" y2="24"/>
                 <path d="M10 10h10v10H10zM28 10h10v10H28zM10 28h10v10H10zM28 28h10v10H28z" fill="currentColor" opacity="0.15"/>
               </svg>
             </div>
             <h3>Window Replacement</h3>
-            <p>Upgrade to energy-efficient windows that slash heating bills and keep every room comfortable — even in a polar vortex. Vinyl, wood &amp; clad options.</p>
+            <p>Upgrade to energy-efficient windows that slash your heating bills and keep every room comfortable — even in a polar vortex.</p>
+            <ul class="service-card__features">
+              <li>Vinyl, wood &amp; clad options</li>
+              <li>Triple-pane &amp; Low-E glass</li>
+              <li>Custom sizing &amp; styles</li>
+              <li>TRUE Lifetime Warranty&trade;</li>
+            </ul>
           </div>
           <div class="service-card anim-slide-right" data-delay="300">
             <div class="service-card__icon">
-              <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="8" y="8" width="32" height="32" rx="2"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="6" y="6" width="36" height="36" rx="2"/>
+                <path d="M6 6l36 36M42 6L6 42" opacity="0.3"/>
                 <circle cx="24" cy="24" r="8"/>
                 <path d="M24 16v-4M24 36v-4M16 24h-4M36 24h-4"/>
               </svg>
             </div>
             <h3>Winter Weatherization</h3>
-            <p>Comprehensive winterization seals every gap, adds insulation, and ensures your windows are battle-ready for sub-zero Minnesota temperatures.</p>
-          </div>
-          <div class="service-card anim-slide-right" data-delay="450">
-            <div class="service-card__icon">
-              <svg width="42" height="42" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="8" y="8" width="32" height="32" rx="2"/>
-                <rect x="12" y="12" width="24" height="24" rx="1"/>
-                <rect x="16" y="16" width="16" height="16" rx="1"/>
-                <line x1="24" y1="8" x2="24" y2="40"/>
-              </svg>
-            </div>
-            <h3>Triple-Pane Upgrade</h3>
-            <p>Maximum insulation for the harshest climates. Three layers of glass with argon gas fill block cold transfer and reduce noise dramatically.</p>
+            <p>Our comprehensive winterization package seals every gap, adds insulation, and ensures your windows are battle-ready for sub-zero temperatures.</p>
+            <ul class="service-card__features">
+              <li>Draft detection &amp; sealing</li>
+              <li>Caulking &amp; foam insulation</li>
+              <li>Storm window installation</li>
+              <li>Thermal assessment</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== KEYPRIME vs OTHERS ===== -->
-    <section class="comparison" id="why">
+    <!-- ===== WINTER DRAFT PROBLEM ===== -->
+    <section class="winter" id="winter">
       <div class="container">
-        <span class="tag tag--center anim-in">Why Keyprime</span>
-        <h2 class="comparison__heading anim-in" data-delay="100">The Keyprime Difference</h2>
-        <div class="comparison__table">
-          <div class="comparison__col comparison__col--kp anim-in" data-delay="100">
-            <div class="comparison__header">
-              <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime" height="32">
+        <div class="winter__layout">
+          <div class="winter__content">
+            <span class="tag anim-in">The Problem</span>
+            <h2 class="winter__heading anim-in" data-delay="100">Is Cold Air Sneaking Into Your Home?</h2>
+            <p class="winter__sub anim-in" data-delay="150">When Minnesota temperatures plunge below zero, even small window gaps become big problems. Here's what drafty windows are really costing you:</p>
+            <div class="winter__problems">
+              <div class="winter__problem anim-in" data-delay="200">
+                <div class="winter__problem-icon winter__problem-icon--red">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v10l4.25 2.5"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <div>
+                  <h4>Skyrocketing Energy Bills</h4>
+                  <p>Drafty windows can increase heating costs by 25–30%, costing hundreds of dollars each winter season.</p>
+                </div>
+              </div>
+              <div class="winter__problem anim-in" data-delay="280">
+                <div class="winter__problem-icon winter__problem-icon--blue">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l2 2"/></svg>
+                </div>
+                <div>
+                  <h4>Cold Spots &amp; Discomfort</h4>
+                  <p>Rooms near windows feel noticeably colder, forcing your furnace to work overtime without ever feeling truly warm.</p>
+                </div>
+              </div>
+              <div class="winter__problem anim-in" data-delay="360">
+                <div class="winter__problem-icon winter__problem-icon--orange">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <div>
+                  <h4>Condensation &amp; Ice Buildup</h4>
+                  <p>Moisture between panes causes fog, frost, and even ice — damaging frames and promoting mold growth.</p>
+                </div>
+              </div>
+              <div class="winter__problem anim-in" data-delay="440">
+                <div class="winter__problem-icon winter__problem-icon--green">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                </div>
+                <div>
+                  <h4>Decreasing Home Value</h4>
+                  <p>Old, inefficient windows are one of the first things home inspectors flag — and buyers notice.</p>
+                </div>
+              </div>
             </div>
-            <ul class="comparison__list">
-              <li><span class="check">&#10003;</span> Free, comprehensive window inspection</li>
-              <li><span class="check">&#10003;</span> True Lifetime Warranty on all work</li>
-              <li><span class="check">&#10003;</span> Licensed &amp; insured Minnesota contractor</li>
-              <li><span class="check">&#10003;</span> Energy-efficient windows for extreme cold</li>
-              <li><span class="check">&#10003;</span> 1-year post-install inspection included</li>
-              <li><span class="check">&#10003;</span> Honest repair-first approach</li>
-            </ul>
           </div>
-          <div class="comparison__col comparison__col--others anim-in" data-delay="250">
-            <div class="comparison__header">
-              <span>Others</span>
+          <div class="winter__visual anim-in" data-delay="200">
+            <div class="frost-window">
+              <div class="frost-window__frame">
+                <div class="frost-window__pane">
+                  <div class="frost-window__frost"></div>
+                  <div class="frost-window__draft">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  </div>
+                </div>
+                <div class="frost-window__pane">
+                  <div class="frost-window__frost frost-window__frost--d1"></div>
+                </div>
+                <div class="frost-window__pane">
+                  <div class="frost-window__frost frost-window__frost--d2"></div>
+                </div>
+                <div class="frost-window__pane">
+                  <div class="frost-window__frost frost-window__frost--d3"></div>
+                  <div class="frost-window__draft frost-window__draft--alt">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="frost-window__thermo">
+                <div class="frost-window__temp-cold">-15&deg;F</div>
+                <div class="frost-window__temp-bar"><div class="frost-window__temp-fill"></div></div>
+                <div class="frost-window__temp-warm">68&deg;F</div>
+              </div>
             </div>
-            <ul class="comparison__list">
-              <li><span class="cross">&times;</span> Inspection fees or limited scope</li>
-              <li><span class="cross">&times;</span> Standard manufacturer warranty only</li>
-              <li><span class="cross">&times;</span> May lack proper licensing</li>
-              <li><span class="cross">&times;</span> Generic windows not built for MN climate</li>
-              <li><span class="cross">&times;</span> No follow-up after completion</li>
-              <li><span class="cross">&times;</span> Push full replacement over repairs</li>
-            </ul>
           </div>
         </div>
-        <!-- Mobile accordion -->
-        <div class="comparison__accordion">
-          <div class="comparison__col comparison__col--kp">
-            <div class="comparison__acc-list" id="compAccordion">
-              <div class="comparison__acc-item" data-index="0">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>Free, comprehensive window inspection</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">Inspection fees or limited scope</span>
-                  </div>
-                </div>
-              </div>
-              <div class="comparison__acc-item" data-index="1">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>True Lifetime Warranty on all work</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">Standard manufacturer warranty only</span>
-                  </div>
-                </div>
-              </div>
-              <div class="comparison__acc-item" data-index="2">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>Licensed &amp; insured Minnesota contractor</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">May lack proper licensing</span>
-                  </div>
-                </div>
-              </div>
-              <div class="comparison__acc-item" data-index="3">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>Energy-efficient windows for extreme cold</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">Generic windows not built for MN climate</span>
-                  </div>
-                </div>
-              </div>
-              <div class="comparison__acc-item" data-index="4">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>1-year post-install inspection included</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">No follow-up after completion</span>
-                  </div>
-                </div>
-              </div>
-              <div class="comparison__acc-item" data-index="5">
-                <div class="comparison__acc-kp">
-                  <span class="check">&#10003;</span>
-                  <span>Honest repair-first approach</span>
-                  <svg class="comparison__acc-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-                </div>
-                <div class="comparison__acc-others">
-                  <div class="comparison__acc-others-inner">
-                    <span class="comparison__acc-others-label">VS Others |</span>
-                    <span class="comparison__acc-others-data">Push full replacement over repairs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process" id="process">
+      <div class="process__overlay"></div>
+      <div class="container process__content">
+        <span class="tag tag--light anim-in">How It Works</span>
+        <h2 class="process__heading anim-in" data-delay="100">From Draft to Done in 4 Simple Steps</h2>
+        <p class="process__sub anim-in" data-delay="150">We make window repair and replacement easy. No pressure, no surprises — just honest work done right.</p>
+        <div class="process__steps">
+          <div class="process__step anim-in" data-delay="200">
+            <div class="process__step-num">01</div>
+            <h3>Free Inspection</h3>
+            <p>We visit your home, check every window, and identify exactly where drafts, damage, and energy loss are happening.</p>
+          </div>
+          <div class="process__connector"></div>
+          <div class="process__step anim-in" data-delay="300">
+            <div class="process__step-num">02</div>
+            <h3>Custom Recommendation</h3>
+            <p>You get a clear, no-pressure proposal with options that fit your budget — repair what you can, replace what you should.</p>
+          </div>
+          <div class="process__connector"></div>
+          <div class="process__step anim-in" data-delay="400">
+            <div class="process__step-num">03</div>
+            <h3>Expert Installation</h3>
+            <p>Our certified crews handle the work efficiently, cleanly, and with minimal disruption to your daily routine.</p>
+          </div>
+          <div class="process__connector"></div>
+          <div class="process__step anim-in" data-delay="500">
+            <div class="process__step-num">04</div>
+            <h3>Warm &amp; Sealed</h3>
+            <p>We do a final walkthrough with you to make sure everything is perfect. Then enjoy a warmer, quieter home all winter.</p>
           </div>
         </div>
       </div>
@@ -357,8 +344,16 @@
       <div class="container">
         <span class="tag tag--center anim-in">Our Products</span>
         <h2 class="window-types__heading anim-in" data-delay="100">Windows Built for Minnesota Winters</h2>
+        <p class="window-types__sub anim-in" data-delay="150">We carry top-tier window brands engineered to withstand extreme cold while keeping your home comfortable and efficient.</p>
         <div class="window-types__grid">
           <div class="window-type-card anim-in" data-delay="0">
+            <div class="window-type-card__header window-type-card__header--vinyl">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="8" y="8" width="32" height="32" rx="2"/>
+                <line x1="24" y1="8" x2="24" y2="40"/>
+                <line x1="8" y1="24" x2="40" y2="24"/>
+              </svg>
+            </div>
             <h3>Vinyl Windows</h3>
             <p>The most cost-effective choice. Low maintenance, excellent insulation, and built to last decades without fading, peeling, or warping.</p>
             <div class="window-type-card__tags">
@@ -368,6 +363,14 @@
             </div>
           </div>
           <div class="window-type-card anim-in" data-delay="100">
+            <div class="window-type-card__header window-type-card__header--clad">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="8" y="8" width="32" height="32" rx="2"/>
+                <rect x="12" y="12" width="24" height="24" rx="1"/>
+                <line x1="24" y1="8" x2="24" y2="40"/>
+                <line x1="8" y1="24" x2="40" y2="24"/>
+              </svg>
+            </div>
             <h3>Clad Windows</h3>
             <p>The best of both worlds. A wood interior for warmth and beauty, with an aluminum or fiberglass exterior that fights the elements.</p>
             <div class="window-type-card__tags">
@@ -377,234 +380,259 @@
             </div>
           </div>
           <div class="window-type-card anim-in" data-delay="200">
+            <div class="window-type-card__header window-type-card__header--wood">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="8" y="8" width="32" height="32" rx="2"/>
+                <line x1="24" y1="8" x2="24" y2="40"/>
+                <line x1="8" y1="24" x2="40" y2="24"/>
+                <path d="M10 14h4M10 18h6M10 30h4M10 34h6M26 14h4M26 18h6M26 30h4M26 34h6" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
             <h3>Wood Windows</h3>
-            <p>Timeless character for historic homes. Naturally insulating with unmatched beauty — we can match any existing millwork profile.</p>
+            <p>Timeless character for historic homes. Naturally insulating with unmatched beauty — and we can match any existing millwork profile.</p>
             <div class="window-type-card__tags">
               <span>Historic Match</span>
               <span>Natural Insulation</span>
               <span>Custom Profiles</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TESTIMONIAL ===== -->
-    <section class="testimonial">
-      <div class="container">
-        <div class="testimonial__inner anim-in">
-          <div class="testimonial__mark">&ldquo;</div>
-          <blockquote>
-            <p>We had three windows replaced before last winter and the difference was night and day. No more cold spots in the living room, and our heating bill dropped noticeably. The Keyprime crew was professional and fast.</p>
-          </blockquote>
-          <div class="testimonial__author">
-            <strong>Mike J.</strong>
-            <span>Plymouth, MN</span>
+          <div class="window-type-card anim-in" data-delay="300">
+            <div class="window-type-card__header window-type-card__header--triple">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="8" y="8" width="32" height="32" rx="2"/>
+                <rect x="12" y="12" width="24" height="24" rx="1"/>
+                <rect x="16" y="16" width="16" height="16" rx="1"/>
+                <line x1="24" y1="8" x2="24" y2="40"/>
+              </svg>
+            </div>
+            <h3>Triple-Pane Glass</h3>
+            <p>Maximum insulation for the harshest climates. Three layers of glass with argon gas fill block cold transfer and reduce noise dramatically.</p>
+            <div class="window-type-card__tags">
+              <span>Max Insulation</span>
+              <span>Noise Reduction</span>
+              <span>Argon Gas Fill</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
-    <section class="faq" id="faq">
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
       <div class="container">
-        <div class="faq__header">
-          <span class="tag anim-in">FAQ</span>
-          <h2 class="faq__heading anim-in" data-delay="100">Common Questions About Window Repair</h2>
-        </div>
-        <div class="faq__list">
-          <details class="faq__item anim-in" data-delay="0" open>
-            <summary>How do I know if my windows need repair or replacement?</summary>
-            <div class="faq__answer">
-              <p>Look for signs like drafts near windows, condensation or fog between panes, difficulty opening or closing, visible frame rot, or noticeably higher heating bills. If your windows are over 15-20 years old, they may lack modern energy-efficient features. Keyprime offers free inspections — we'll assess every window and give honest recommendations on whether repair or replacement makes the most sense for your situation and budget.</p>
+        <span class="tag tag--center anim-in">Customer Reviews</span>
+        <h2 class="testimonials__heading anim-in" data-delay="100">Trusted by Homeowners Across Minnesota</h2>
+        <div class="testimonials__grid">
+          <div class="testimonial-card anim-in" data-delay="0">
+            <div class="testimonial-card__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-          </details>
-          <details class="faq__item anim-in" data-delay="80">
-            <summary>What's the difference between double-pane and triple-pane windows?</summary>
-            <div class="faq__answer">
-              <p>Double-pane windows have two layers of glass with a gas fill between them, providing good insulation for most climates. Triple-pane windows add a third layer of glass and an additional gas fill chamber, offering superior insulation, noise reduction, and condensation resistance. For Minnesota's extreme winters, triple-pane windows can significantly reduce heating costs and eliminate cold spots near windows.</p>
+            <p>"Keyprime did a great job on our home! The job was done correctly with great attention to detail. The staff at Keyprime is awesome! They assisted us with the claim with the insurance company. They walked us through the entire process with confidence. They addressed our concerns without hesitation. We recommend Keyprime to anyone!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">KR</div>
+              <div><strong>Keith R.</strong><span>Minnesota</span></div>
             </div>
-          </details>
-          <details class="faq__item anim-in" data-delay="160">
-            <summary>How long does a window replacement take?</summary>
-            <div class="faq__answer">
-              <p>Most standard window replacements take 30-60 minutes per window. A typical home with 8-12 windows can usually be completed in one to two days. Custom or specialty windows may require additional time. We schedule installations to minimize disruption and always clean up thoroughly when we're done.</p>
+          </div>
+          <div class="testimonial-card anim-in" data-delay="100">
+            <div class="testimonial-card__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-          </details>
-          <details class="faq__item anim-in" data-delay="240">
-            <summary>What does the True Lifetime Warranty cover?</summary>
-            <div class="faq__answer">
-              <p>Our True Lifetime Warranty covers installation, workmanship, inspections, and quality control for as long as you own your home. This goes beyond the standard manufacturer warranty that most contractors offer. If anything goes wrong with our installation, we'll come back and make it right — no questions asked, no fine print, no expiration date.</p>
+            <p>"Our experience with KeyPrime was uniformly positive from start to finish. The work was top-notch. You may be able to find a slightly cheaper outfit, but many firms would charge more. We couldn't be happier with the results."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">MS</div>
+              <div><strong>Matt S.</strong><span>Edina, MN</span></div>
             </div>
-          </details>
-          <details class="faq__item anim-in" data-delay="320">
-            <summary>Can you fix foggy or condensation-filled windows?</summary>
-            <div class="faq__answer">
-              <p>Foggy windows indicate a broken seal between the glass panes. In some cases, we can replace just the insulated glass unit (IGU) without replacing the entire window frame, which saves you money. During your free inspection, we'll determine whether a seal repair, glass-only replacement, or full window replacement is the best solution.</p>
+          </div>
+          <div class="testimonial-card anim-in" data-delay="200">
+            <div class="testimonial-card__stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-          </details>
+            <p>"I was very pleased with Keyprime. They were unbelievably professional, and surpassed all of my expectations. William was very good about communicating and very prompt to reply to inquiries. Highly recommend!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">AD</div>
+              <div><strong>Aneela D.</strong><span>Minneapolis, MN</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== CTA — Let's Talk ===== -->
-    <section class="cta" id="cta">
-      <div class="cta__overlay"></div>
-      <div class="container cta__content">
-        <h2 class="anim-in">Let's Talk.</h2>
-        <p class="anim-in" data-delay="100">Ready to stop the cold drafts? Click below to schedule your free window inspection. A Keyprime specialist will assess your windows and give you honest, no-pressure recommendations.</p>
-        <a href="https://keyprimeroofing.com/free-estimate" class="btn btn--cta-light btn--lg anim-in" data-delay="200">Get A Free Quote</a>
+    <!-- ===== TRUST BADGES ===== -->
+    <section class="trust">
+      <div class="container">
+        <div class="trust__grid">
+          <div class="trust__item anim-in" data-delay="0">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div><strong>Licensed &amp; Insured</strong><span>MN BC690664</span></div>
+          </div>
+          <div class="trust__item anim-in" data-delay="100">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+            <div><strong>BBB Accredited</strong><span>A+ Rating</span></div>
+          </div>
+          <div class="trust__item anim-in" data-delay="200">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <div><strong>Top Rated</strong><span>Angi Certified</span></div>
+          </div>
+          <div class="trust__item anim-in" data-delay="300">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+            <div><strong>TRUE Lifetime</strong><span>Warranty&trade;</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT / CTA ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__layout">
+          <div class="contact__info">
+            <span class="tag anim-in">Get Started</span>
+            <h2 class="contact__heading anim-in" data-delay="100">Ready to Stop the Cold Drafts?</h2>
+            <p class="contact__sub anim-in" data-delay="150">Fill out the form for a free, no-obligation window inspection and quote. We'll assess your windows and give you honest recommendations — no high-pressure sales tactics.</p>
+            <div class="contact__details anim-in" data-delay="200">
+              <div class="contact__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div><strong>Call Us</strong><a href="tel:+19525223705">(952) 522-3705</a></div>
+              </div>
+              <div class="contact__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div><strong>Visit Us</strong><span>1000 Boone Ave N, Suite 760<br>Golden Valley, MN 55427</span></div>
+              </div>
+              <div class="contact__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <div><strong>Hours</strong><span>Mon–Fri: 8:00 AM – 5:00 PM<br>Sat: By Appointment</span></div>
+              </div>
+            </div>
+            <div class="contact__service-area anim-in" data-delay="250">
+              <strong>Service Areas:</strong> Minneapolis, St. Paul, Plymouth, Maple Grove, Golden Valley, Edina, Bloomington, Eden Prairie, Minnetonka, Wayzata, and surrounding metro areas in Minnesota &amp; Wisconsin.
+            </div>
+          </div>
+          <div class="contact__form-wrap anim-in" data-delay="200">
+            <form class="contact__form" id="contactForm">
+              <h3>Get Your Free Quote</h3>
+              <div class="contact__form-row">
+                <div class="contact__form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="contact__form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required>
+                </div>
+              </div>
+              <div class="contact__form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="contact__form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="contact__form-group">
+                <label for="address">Street Address</label>
+                <input type="text" id="address" name="address">
+              </div>
+              <div class="contact__form-row">
+                <div class="contact__form-group">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city">
+                </div>
+                <div class="contact__form-group">
+                  <label for="zip">Zip Code</label>
+                  <input type="text" id="zip" name="zip">
+                </div>
+              </div>
+              <div class="contact__form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option value="repair">Window Repair</option>
+                  <option value="replacement">Window Replacement</option>
+                  <option value="weatherization">Winter Weatherization</option>
+                  <option value="inspection">Free Window Inspection</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="contact__form-group">
+                <label for="windows">Number of Windows</label>
+                <select id="windows" name="windows">
+                  <option value="">How many windows?</option>
+                  <option value="1-3">1–3 windows</option>
+                  <option value="4-8">4–8 windows</option>
+                  <option value="9-15">9–15 windows</option>
+                  <option value="16+">16+ windows (whole home)</option>
+                </select>
+              </div>
+              <div class="contact__form-group">
+                <label for="message">Tell Us About Your Window Issues</label>
+                <textarea id="message" name="message" rows="4" placeholder="Describe any drafts, fog, damage, or other concerns..."></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Request Free Quote</button>
+              <p class="contact__form-note">We typically respond within 24 hours. No spam, ever.</p>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div class="container">
-        <!-- Desktop footer -->
         <div class="footer__top">
           <div class="footer__brand">
             <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime Inc." width="140">
-            <div class="footer__tagline">
-              <p>Local expertise and Minnesota values.<br>We understand Minnesota homes,<br>Minnesota weather, and Minnesota<br>homeowners.<br>A process built around doing things right.<br>One standard: done correctly.</p>
-            </div>
+            <p>Expert window repair and replacement services for Minnesota and Wisconsin homeowners. Keeping your home warm, efficient, and comfortable — one window at a time.</p>
             <div class="footer__social">
-              <a href="https://www.facebook.com/keyprimeroofing" aria-label="Facebook"><img src="assets/icons/fb-icon.png" alt="" class="social-icon"></a>
-              <a href="https://www.instagram.com/keyprimeroofing" aria-label="Instagram"><img src="assets/icons/ig-icon.png" alt="" class="social-icon"></a>
-              <a href="https://www.linkedin.com/company/keyprimeroofing" aria-label="LinkedIn"><img src="assets/icons/linkedin-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.facebook.com/keyprimeroofing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/fb-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.instagram.com/keyprimeroofing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/ig-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.linkedin.com/company/keyprimeroofing" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/icons/linkedin-icon.png" alt="" class="social-icon"></a>
             </div>
           </div>
           <div class="footer__links">
             <div class="footer__col">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="https://keyprimeroofing.com/about">About Us</a></li>
-                <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
-                <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
-                <li><a href="https://keyprimeroofing.com/financing">Financing</a></li>
-                <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
-                <li><a href="https://keyprimeroofing.com/warranty">Warranty</a></li>
-                <li><a href="https://keyprimeroofing.com/contact">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer__col footer__col--services">
               <h4>Services</h4>
               <ul>
-                <li><a href="https://keyprimeroofing.com/services/roofing">Roofing</a></li>
-                <li><a href="https://keyprimeroofing.com/services/windows-and-doors">Windows &amp; Doors</a></li>
-                <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
-                <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
-                <li><a href="https://keyprimeroofing.com/services/fortified-roofing">Fortified Roofing</a></li>
-              </ul>
-              <ul>
-                <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
-                <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
-                <li><a href="https://keyprimeroofing.com/tree-damage">Tree Damage</a></li>
-                <li><a href="https://keyprimeroofing.com/services/storm-repair">Storm Damage</a></li>
-                <li><a href="https://keyprimeroofing.com/expert-restoration">Expert Restoration</a></li>
+                <li><a href="#services">Window Repair</a></li>
+                <li><a href="#services">Window Replacement</a></li>
+                <li><a href="#services">Winter Weatherization</a></li>
+                <li><a href="#contact">Free Inspection</a></li>
               </ul>
             </div>
             <div class="footer__col">
-              <h4>Resources</h4>
+              <h4>Company</h4>
               <ul>
-                <li><a href="https://keyprimeroofing.com/partners">Partners</a></li>
-                <li><a href="https://keyprimeroofing.com/reviews">Reviews</a></li>
-                <li><a href="https://keyprimeroofing.com/equipment">Equipments</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#windows">Window Types</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact Us</a></li>
               </ul>
             </div>
-            <div class="footer__col footer__col--newsletter">
-              <h4>Newsletter</h4>
-              <p class="footer__nl-desc">Stay updated on our latest projects, campaigns, discounts, and more.</p>
-              <form class="footer__newsletter-form" onsubmit="return false;">
-                <input type="email" placeholder="Your Email" required>
-                <button type="submit" aria-label="Subscribe">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                </button>
-              </form>
+            <div class="footer__col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="tel:+19525223705">(952) 522-3705</a></li>
+                <li>1000 Boone Ave N, Ste 760</li>
+                <li>Golden Valley, MN 55427</li>
+                <li>MN Lic: BC690664</li>
+              </ul>
             </div>
-          </div>
-        </div>
-        <!-- Mobile footer -->
-        <div class="footer__links--mobile">
-          <div class="footer__col--mobile">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="https://keyprimeroofing.com/about">About Us</a></li>
-              <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
-              <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
-              <li><a href="https://keyprimeroofing.com/financing">Financing</a></li>
-              <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
-              <li><a href="https://keyprimeroofing.com/warranty">Warranty</a></li>
-              <li><a href="https://keyprimeroofing.com/contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__col--mobile footer__col--services-mobile">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="https://keyprimeroofing.com/services/roofing">Roofing</a></li>
-              <li><a href="https://keyprimeroofing.com/services/windows-and-doors">Windows &amp; Doors</a></li>
-              <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
-              <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
-              <li><a href="https://keyprimeroofing.com/services/fortified-roofing">Fortified Roofing</a></li>
-            </ul>
-            <ul>
-              <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
-              <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
-              <li><a href="https://keyprimeroofing.com/tree-damage">Tree Damage</a></li>
-              <li><a href="https://keyprimeroofing.com/services/storm-repair">Storm Damage</a></li>
-              <li><a href="https://keyprimeroofing.com/expert-restoration">Expert Restoration</a></li>
-            </ul>
-          </div>
-          <div class="footer__col--mobile">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="https://keyprimeroofing.com/partners">Partners</a></li>
-              <li><a href="https://keyprimeroofing.com/reviews">Reviews</a></li>
-              <li><a href="https://keyprimeroofing.com/equipment">Equipments</a></li>
-              <li><a href="#faq">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer__newsletter--mobile">
-            <h4>Newsletter</h4>
-            <p>Stay updated on our latest projects, campaigns, discounts, and more.</p>
-            <form class="footer__newsletter-form" onsubmit="return false;">
-              <input type="email" placeholder="Your Email" required>
-              <button type="submit" aria-label="Subscribe">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </button>
-            </form>
           </div>
         </div>
         <div class="footer__bottom">
-          <div class="footer__bottom-left">
-            <span class="footer__copy">&copy; 2026 &nbsp; Keyprime Inc. All rights reserved.</span>
-            <span class="footer__licenses">MN License BC690664 &nbsp; WI License NO. 052300545 - DC</span>
-          </div>
-          <div class="footer__bottom-mobile">
-            <div class="footer__social">
-              <a href="https://www.facebook.com/keyprimeroofing" aria-label="Facebook"><img src="assets/icons/fb-icon.png" alt="" class="social-icon"></a>
-              <a href="https://www.instagram.com/keyprimeroofing" aria-label="Instagram"><img src="assets/icons/ig-icon.png" alt="" class="social-icon"></a>
-              <a href="https://www.linkedin.com/company/keyprimeroofing" aria-label="LinkedIn"><img src="assets/icons/linkedin-icon.png" alt="" class="social-icon"></a>
-            </div>
-            <div class="footer__tagline--mobile">
-              <p>Local expertise and Minnesota values.</p>
-              <p>We understand Minnesota homes, Minnesota weather, and Minnesota homeowners.</p>
-              <p>A process built around doing things right.</p>
-              <p>One standard: done correctly.</p>
-            </div>
-            <div class="footer__logo-bottom">
-              <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime Inc.">
-            </div>
-          </div>
-          <div class="footer__legal">
-            <a href="https://keyprimeroofing.com/privacy-policy">Privacy Policy</a>
-            <span>|</span>
-            <a href="https://keyprimeroofing.com/terms-and-conditions">Terms and Conditions</a>
-            <span>|</span>
-            <a href="#">Cookies Settings</a>
-          </div>
-          <p class="footer__copy--mobile">&copy; 2026 &nbsp; Keyprime Inc.</p>
-          <p class="footer__licenses--mobile">All rights reserved. MN License BC690664 WI License NO. 052300545 - DC</p>
+          <span class="footer__copy">&copy; 2026 Keyprime Inc. All rights reserved.</span>
+          <span class="footer__division">A division of <a href="https://www.keyprimeroofing.com" target="_blank" rel="noopener noreferrer">Keyprime Roofing &amp; Remodeling</a></span>
         </div>
       </div>
     </footer>
@@ -612,7 +640,20 @@
   </div><!-- /.page-content -->
 
   <!-- Side tab -->
-  <a href="https://keyprimeroofing.com/free-estimate" class="side-tab">Get Free Quote</a>
+  <a href="#contact" class="side-tab">Get Free Quote</a>
+
+  <!-- Scroll frost overlay -->
+  <div class="frost" id="frost">
+    <div class="frost__edge frost__edge--top"></div>
+    <div class="frost__edge frost__edge--bottom"></div>
+    <div class="frost__edge frost__edge--left"></div>
+    <div class="frost__edge frost__edge--right"></div>
+    <div class="frost__corner frost__corner--tl"></div>
+    <div class="frost__corner frost__corner--tr"></div>
+    <div class="frost__corner frost__corner--bl"></div>
+    <div class="frost__corner frost__corner--br"></div>
+    <div class="frost__blur"></div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
