@@ -120,6 +120,115 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Product tabs — 3-column selector ── */
+  const productData = [
+    { desc: 'Low-maintenance, energy-efficient frames with fusion-welded corners, argon-filled double or triple glazing, and Low-E coatings. Built to last decades without fading, peeling, or warping.', img: 'assets/images/products/vinyl-windows.png', alt: 'Vinyl Windows' },
+    { desc: 'The best of both worlds — a wood interior for warmth and beauty, with an aluminum, fiberglass, or vinyl exterior that fights the elements. Hail-resistant with strong air-infiltration ratings.', img: 'assets/images/products/clad-windows.png', alt: 'Clad Windows' },
+    { desc: 'Solid wood frames in pine, oak, maple, or mahogany with custom stains and strong insulating value. Perfect for historic homes and luxury rebuilds — we can match any existing millwork profile.', img: 'assets/images/products/wood-windows.png', alt: 'Wood Windows' },
+    { desc: 'Maximum insulation for the harshest climates. Three layers of glass with argon gas fill block cold transfer and reduce noise dramatically — ideal for Minnesota winters.', img: 'assets/images/products/triple-pane-glass.png', alt: 'Triple-Pane Glass' },
+    { desc: 'High-security steel, insulated fiberglass, sliding patio, and French multi-slide doors — custom-fit for energy efficiency, curb appeal, and lasting durability.', img: 'assets/images/products/entry-patio-doors.png', alt: 'Entry & Patio Doors' }
+  ];
+
+  const productBtns = document.querySelectorAll('.products__item');
+  const productDesc = document.getElementById('productDesc');
+  const productImg  = document.getElementById('productImg');
+
+  if (productBtns.length && productDesc && productImg) {
+    productBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.index);
+        const data = productData[idx];
+        if (!data) return;
+
+        productBtns.forEach(b => b.classList.remove('products__item--active'));
+        btn.classList.add('products__item--active');
+
+        productDesc.classList.add('fade-out');
+        productImg.classList.add('fade-out');
+
+        setTimeout(() => {
+          productDesc.textContent = data.desc;
+          productImg.src = data.img;
+          productImg.alt = data.alt;
+          productDesc.classList.remove('fade-out');
+          productImg.classList.remove('fade-out');
+        }, 300);
+      });
+    });
+  }
+
+  /* ── Parallax for products background ── */
+  const parallaxBg = document.querySelector('[data-parallax]');
+  if (parallaxBg) {
+    const rate = parseFloat(parallaxBg.dataset.parallax) || 0.1;
+    window.addEventListener('scroll', () => {
+      const rect = parallaxBg.parentElement.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) {
+        const offset = rect.top * rate;
+        parallaxBg.style.transform = `translateY(${offset}px)`;
+      }
+    }, { passive: true });
+  }
+
+  /* ── Testimonial stars (inject SVGs) ── */
+  const starSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+  document.querySelectorAll('.testimonial-card__stars').forEach(el => {
+    el.innerHTML = starSVG.repeat(5);
+  });
+
+  /* ── Testimonial paging ── */
+  const reviewGrid = document.getElementById('reviewGrid');
+  const prevBtn = document.getElementById('reviewPrev');
+  const nextBtn = document.getElementById('reviewNext');
+
+  if (reviewGrid && prevBtn && nextBtn) {
+    const cards = Array.from(reviewGrid.querySelectorAll('.testimonial-card'));
+    let page = 0;
+
+    function getPerPage() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function showPage() {
+      const perPage = getPerPage();
+      const start = page * perPage;
+      cards.forEach((c, i) => {
+        c.style.display = (i >= start && i < start + perPage) ? '' : 'none';
+      });
+    }
+
+    function maxPage() {
+      return Math.ceil(cards.length / getPerPage()) - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (page > 0) { page--; showPage(); }
+    });
+    nextBtn.addEventListener('click', () => {
+      if (page < maxPage()) { page++; showPage(); }
+    });
+
+    window.addEventListener('resize', () => {
+      if (page > maxPage()) page = maxPage();
+      showPage();
+    });
+
+    showPage();
+  }
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
   /* ═══════════════════════════════════════════
      SCROLL FROST — spread-based intensity
      Ice texture generated once (small canvas),
@@ -207,18 +316,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── Scroll-driven spread ── */
     var frost = 0;
+    var blur = 0;
     var target = 0;
     var accum = 0;
     var prevY = window.scrollY;
     var decayTimer = null;
     var raf = null;
 
-    /* MIN/MAX mask size — controls how far ice spreads
-       At frost=0 → 0% (invisible)
-       At frost=1 → 110% (nearly full screen from each corner) */
-    function applyFrost(v) {
-      el.style.setProperty('--frost', v);
-      var pct = (v * 110) + '%';
+    /* frost drives texture mask-size, blur drives backdrop blur separately */
+    function applyFrost(fv, bv) {
+      el.style.setProperty('--frost', fv);
+      el.style.setProperty('--blur', bv);
+      var pct = (fv * 110) + '%';
       for (var c = 0; c < corners.length; c++) {
         corners[c].style.webkitMaskSize = pct + ' ' + pct;
         corners[c].style.maskSize = pct + ' ' + pct;
@@ -232,13 +341,20 @@ document.addEventListener('DOMContentLoaded', () => {
         frost = Math.max(frost - 0.002, target);
       }
 
-      applyFrost(frost);
+      if (blur < target) {
+        blur = Math.min(blur + 0.03, target);
+      } else if (blur > target) {
+        blur = Math.max(blur - 0.015, target);
+      }
 
-      if (frost > 0.001 || target > 0) {
+      applyFrost(frost, blur);
+
+      if (frost > 0.001 || blur > 0.001 || target > 0) {
         raf = requestAnimationFrame(tick);
       } else {
         frost = 0;
-        applyFrost(0);
+        blur = 0;
+        applyFrost(0, 0);
         raf = null;
       }
     }
@@ -248,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* Start with 0 spread */
-    applyFrost(0);
+    applyFrost(0, 0);
 
     window.addEventListener('scroll', function() {
       var nowY = window.scrollY;
