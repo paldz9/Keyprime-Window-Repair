@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
@@ -128,12 +128,14 @@
         <img src="assets/logos/owens-corning.png" alt="Owens Corning">
         <img src="assets/logos/mrca.png" alt="MRCA">
         <img src="assets/logos/velux.png" alt="Velux">
+        <img src="assets/logos/heartland-windows.jpg" alt="Heartland Windows" style="height:26px">
         <img src="assets/logos/gaf.png" alt="GAF">
         <img src="assets/logos/bbb.png" alt="BBB">
         <img src="assets/logos/nrca.png" alt="NRCA">
         <img src="assets/logos/owens-corning.png" alt="Owens Corning">
         <img src="assets/logos/mrca.png" alt="MRCA">
         <img src="assets/logos/velux.png" alt="Velux">
+        <img src="assets/logos/heartland-windows.jpg" alt="Heartland Windows" style="height:26px">
       </div>
     </div>
   </header>
@@ -149,8 +151,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <div class="winter-alert__text">
-            <strong>Cold drafts cost Minnesota homeowners an average of $300–$600 extra per winter.</strong>
-            <span>Schedule your free window inspection before the first freeze.</span>
+            <strong>Drafts can waste 5–30% of a home's heating energy per year.</strong>
+            <span>Source: <a href="https://www.energy.gov/energysaver/air-sealing-your-home" target="_blank" rel="noopener noreferrer">U.S. Department of Energy</a> — Schedule your free window inspection before the first freeze.</span>
           </div>
           <a href="#contact" class="btn btn--primary">Book Inspection</a>
         </div>
@@ -407,6 +409,257 @@
       </div>
     </section>
 
+    <!-- ===== HEARTLAND WINDOWS — OUR PARTNER ===== -->
+    <section class="heartland" id="heartland">
+      <div class="container">
+        <div class="heartland__header anim-in">
+          <span class="tag tag--center">Our Window Supplier</span>
+          <h2 class="heartland__heading">Proudly Partnered with<br>Heartland Windows</h2>
+          <p class="heartland__sub">We exclusively install Heartland Windows — American-made vinyl replacement windows engineered for performance, durability, and energy efficiency. Custom-made to your exact window opening and built to last in the harshest climates.</p>
+          <div class="heartland__logo-wrap">
+            <img src="assets/logos/heartland-windows.jpg" alt="Heartland Windows" class="heartland__logo">
+          </div>
+        </div>
+
+        <!-- Window Types — full-width carousel -->
+        <div class="heartland__types anim-in" data-delay="150">
+          <div class="heartland__types-header">
+            <div>
+              <h3 class="heartland__section-title">Available Window Styles</h3>
+              <p class="heartland__section-sub">Select a window style to explore series and features.</p>
+            </div>
+            <div class="heartland__slider-nav">
+              <span class="heartland__slider-counter" id="hSliderCount"><strong>01</strong> / 08</span>
+            </div>
+          </div>
+          <div class="heartland__carousel-wrap">
+            <button class="heartland__carousel-btn heartland__carousel-btn--prev" id="hCarouselPrev" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="heartland__carousel" id="hCarousel">
+              <button class="heartland__type-card heartland__type-card--active" data-type="double-hung">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/double-hung.jpg" alt="Double Hung Window" loading="lazy"></div>
+                <span>Double Hung</span>
+              </button>
+              <button class="heartland__type-card" data-type="single-hung">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/single-hung.jpg" alt="Single Hung Window" loading="lazy"></div>
+                <span>Single Hung</span>
+              </button>
+              <button class="heartland__type-card" data-type="slider">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/slider.png" alt="Slider Window" loading="lazy"></div>
+                <span>Slider</span>
+              </button>
+              <button class="heartland__type-card" data-type="casement">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/casement.png" alt="Casement Window" loading="lazy"></div>
+                <span>Casement</span>
+              </button>
+              <button class="heartland__type-card" data-type="awning">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/awning.png" alt="Awning Window" loading="lazy"></div>
+                <span>Awning</span>
+              </button>
+              <button class="heartland__type-card" data-type="picture">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/picture.png" alt="Picture Window" loading="lazy"></div>
+                <span>Picture</span>
+              </button>
+              <button class="heartland__type-card" data-type="bay-bow">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/bay-bow.png" alt="Bay &amp; Bow Window" loading="lazy"></div>
+                <span>Bay &amp; Bow</span>
+              </button>
+              <button class="heartland__type-card" data-type="basement">
+                <div class="heartland__type-img"><img src="assets/images/heartland/types/basement.png" alt="Basement Window" loading="lazy"></div>
+                <span>Basement</span>
+              </button>
+            </div>
+            <button class="heartland__carousel-btn heartland__carousel-btn--next" id="hCarouselNext" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="heartland__dots" id="hDots"></div>
+        </div>
+
+        <!-- Dynamic series detail area — populated by JS -->
+        <div id="heartland-detail" class="heartland__detail">
+          <div class="heartland__detail-header">
+            <h3 class="heartland__detail-type" id="hDetailType">Double Hung Windows</h3>
+            <p class="heartland__detail-desc" id="hDetailDesc"></p>
+          </div>
+          <div class="heartland__tabs" id="hSeriesTabs"></div>
+          <div class="heartland__series-panel" id="hSeriesPanel">
+            <div class="heartland__series-layout">
+              <div class="heartland__series-info">
+                <h4 class="heartland__series-title" id="hSeriesTitle"></h4>
+                <p class="heartland__series-tagline" id="hSeriesTagline"></p>
+                <p class="heartland__series-desc" id="hSeriesDesc"></p>
+                <div class="heartland__features" id="hSeriesFeatures"></div>
+              </div>
+              <div class="heartland__series-visual">
+                <div class="heartland__cross-section">
+                  <img src="" alt="" class="heartland__cross-img" id="hSeriesImg" loading="lazy">
+                </div>
+                <div class="heartland__cross-section" id="hSeriesImg2Wrap" style="display:none;margin-top:16px">
+                  <img src="" alt="" class="heartland__cross-img" id="hSeriesImg2" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="hShapes" class="heartland__shapes" style="display:none"></div>
+        </div>
+
+        <!-- Color Options with Texture Images -->
+        <div class="heartland__customization anim-in" data-delay="350">
+          <h3 class="heartland__section-title">Color Options</h3>
+          <p class="heartland__section-sub">All Heartland windows are available in a range of interior and exterior finishes, including beautiful wood-grain textures.</p>
+          <div class="heartland__color-section">
+            <div class="heartland__color-group">
+              <h4 class="heartland__color-heading">Interior Colors</h4>
+              <div class="heartland__color-grid">
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/white.jpg" alt="White" loading="lazy">
+                  <span>White</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/sandstone.jpg" alt="Sandstone" loading="lazy">
+                  <span>Sandstone</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/black.jpg" alt="Black" loading="lazy">
+                  <span>Black</span>
+                </div>
+                <div class="heartland__color-item heartland__color-item--wood">
+                  <img src="assets/images/heartland/colors/light-oak.jpg" alt="Light Oak wood grain" loading="lazy">
+                  <span>Light Oak</span>
+                </div>
+                <div class="heartland__color-item heartland__color-item--wood">
+                  <img src="assets/images/heartland/colors/dark-oak.jpg" alt="Dark Oak wood grain" loading="lazy">
+                  <span>Dark Oak</span>
+                </div>
+                <div class="heartland__color-item heartland__color-item--wood">
+                  <img src="assets/images/heartland/colors/cherry.jpg" alt="Cherry wood grain" loading="lazy">
+                  <span>Cherry</span>
+                </div>
+              </div>
+            </div>
+            <div class="heartland__color-group">
+              <h4 class="heartland__color-heading">Exterior Colors</h4>
+              <div class="heartland__color-grid">
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/white.jpg" alt="White" loading="lazy">
+                  <span>White</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/sandstone.jpg" alt="Sandstone" loading="lazy">
+                  <span>Sandstone</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/black.jpg" alt="Black" loading="lazy">
+                  <span>Black</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/clay.jpg" alt="Clay" loading="lazy">
+                  <span>Clay</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/cocoa.jpg" alt="Cocoa" loading="lazy">
+                  <span>Cocoa</span>
+                </div>
+                <div class="heartland__color-item">
+                  <img src="assets/images/heartland/colors/bronze.jpg" alt="Bronze" loading="lazy">
+                  <span>Bronze</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid Options -->
+        <div class="heartland__grids anim-in" data-delay="400">
+          <h3 class="heartland__section-title">Grid Options</h3>
+          <div class="heartland__grid-options">
+            <div class="heartland__grid-item">
+              <img src="assets/images/heartland/grids/colonial.gif" alt="Colonial grid pattern" loading="lazy">
+              <span>Colonial</span>
+            </div>
+            <div class="heartland__grid-item">
+              <img src="assets/images/heartland/grids/prairie.gif" alt="Prairie grid pattern" loading="lazy">
+              <span>Prairie</span>
+            </div>
+            <div class="heartland__grid-item">
+              <img src="assets/images/heartland/grids/diamond.gif" alt="Diamond grid pattern" loading="lazy">
+              <span>Diamond</span>
+            </div>
+            <div class="heartland__grid-item">
+              <img src="assets/images/heartland/grids/decorative.gif" alt="Decorative grid pattern" loading="lazy">
+              <span>Decorative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glass Options with Real Images -->
+        <div class="heartland__glass anim-in" data-delay="450">
+          <h3 class="heartland__section-title">Glass Options</h3>
+          <p class="heartland__section-sub">All windows are made with 7/8" double strength glass. Obscure and bronze or grey tinted glass styles are also available upon request.</p>
+          <div class="heartland__glass-grid">
+            <div class="heartland__glass-option">
+              <img src="assets/images/heartland/glass/standard.gif" alt="Standard glass cross-section" class="heartland__glass-img" loading="lazy">
+              <strong>Standard</strong>
+              <span>2 clear panes with Intercept insulating spacer system</span>
+            </div>
+            <div class="heartland__glass-option">
+              <img src="assets/images/heartland/glass/standardplus.gif" alt="Standard Plus glass cross-section" class="heartland__glass-img" loading="lazy">
+              <strong>Standard Plus</strong>
+              <span>1 clear + 1 Low-E pane with NEAT self-cleaning technology &amp; Intercept insulating</span>
+            </div>
+            <div class="heartland__glass-option heartland__glass-option--featured">
+              <img src="assets/images/heartland/glass/tripleglaze.gif" alt="Triple Glaze glass cross-section" class="heartland__glass-img" loading="lazy">
+              <strong>Triple Glaze</strong>
+              <span>1 clear + 2 Low-E panes with NEAT technology &bull; R-5 Green rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="heartland__tech anim-in" data-delay="500">
+          <h3 class="heartland__section-title">Engineering &amp; Technology</h3>
+          <div class="heartland__tech-grid">
+            <div class="heartland__tech-card">
+              <div class="heartland__tech-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg>
+              </div>
+              <h4>U-PVC Vinyl</h4>
+              <p>High-strength, un-plasticized poly-vinyl chloride — the same maintenance-free material used in medical applications. Wipes clean with soap and water, never needs painting or staining.</p>
+            </div>
+            <div class="heartland__tech-card">
+              <img src="assets/images/heartland/tech/chambers.gif" alt="Multi-chamber frame design" loading="lazy">
+              <h4>Multiple Hollow Chamber Design</h4>
+              <p>Carefully engineered multiple hollow chambers create layers of "dead" air within the frame, providing superior thermal insulation and structural rigidity.</p>
+            </div>
+            <div class="heartland__tech-card">
+              <img src="assets/images/heartland/tech/intercept.png" alt="Intercept insulating spacer system" loading="lazy">
+              <h4>Intercept Insulating Spacer</h4>
+              <p>The Intercept spacer system uses a one-piece U-channel design that outperforms conventional box spacers, reducing condensation and heat transfer at the glass edge.</p>
+            </div>
+            <div class="heartland__tech-card">
+              <img src="assets/images/heartland/tech/loweglass.png" alt="Low-E coated glass" loading="lazy">
+              <h4>Low-E Coated Glass</h4>
+              <p>Low-E glass blocks up to 95% of the sun's damaging ultraviolet rays while allowing natural light in, protecting your furniture, carpets, and artwork from fading.</p>
+            </div>
+            <div class="heartland__tech-card">
+              <div class="heartland__tech-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1m-8-9H3m18 0h-1m-2.636-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <h4>R-5 Green Windows</h4>
+              <p>Triple pane glass with Duralite® spacers achieves an R-5 Green rating — improving thermal performance by up to 50% over standard double pane, reducing energy costs year-round.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supplier credit -->
+        <div class="heartland__credit anim-in" data-delay="600">
+          <p>All window products, specifications, and images courtesy of <a href="https://heartwin.com/windows/" target="_blank" rel="noopener noreferrer"><strong>Heartland Windows</strong></a> — manufacturing the finest vinyl windows and patio doors in the Midwest since 1994. Heartland Windows, 18517 Hwy. 57, Aplington, IA 50604. Product details sourced from the Ultra Series, Elite Series, Hampton Series, and Regency Series official product lines. Heartland Windows is a wholesale manufacturer — contact Keyprime for pricing and installation.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== TRUE LIFETIME WARRANTY ===== -->
     <section class="warranty" id="warranty">
       <div class="warranty__overlay"></div>
@@ -444,13 +697,13 @@
     <section class="testimonials" id="testimonials">
       <div class="container">
         <span class="tag tag--center anim-in">Customer Reviews</span>
-        <h2 class="testimonials__heading anim-in" data-delay="100">Trusted by Homeowners Across Minnesota</h2>
+        <h2 class="testimonials__heading anim-in" data-delay="100">What Homeowners Say About Our Window Work</h2>
         <div class="testimonials__wrap">
         <div class="testimonials__grid" id="reviewGrid">
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"Keyprime did a great job on our home! The job was done correctly with great attention to detail. The staff at Keyprime is awesome! They assisted us with the claim with the insurance company. They walked us through the entire process with confidence. They addressed our concerns without hesitation. We recommend Keyprime to anyone!"</p>
+              <p>"Keyprime replaced all 14 windows in our 1960s rambler. The difference is unbelievable — no more drafts, no more condensation, and our heating bill dropped by over $200 the first month. The crew was fast, clean, and professional."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">KR</div>
                 <div><strong>Keith R.</strong><span>Minnesota</span></div>
@@ -459,7 +712,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"Our experience with KeyPrime was uniformly positive from start to finish. The work was top-notch. You may be able to find a slightly cheaper outfit, but many firms would charge more. We couldn't be happier with the results."</p>
+              <p>"We had foggy, failing double-pane windows throughout the house. Keyprime inspected every window and recommended repairs where possible and replacements where needed — saving us thousands. Honest and fair."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">MS</div>
                 <div><strong>Matt S.</strong><span>Edina, MN</span></div>
@@ -468,7 +721,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"I was very pleased with Keyprime. They were unbelievably professional, and surpassed all of my expectations. William was very good about communicating and very prompt to reply to inquiries. Highly recommend!"</p>
+              <p>"Our bay window was letting in so much cold air we couldn't use the living room in winter. Keyprime installed a beautiful new Heartland bay window and it completely transformed the room. Warm, quiet, and gorgeous."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">AD</div>
                 <div><strong>Aneela D.</strong><span>Minneapolis, MN</span></div>
@@ -477,16 +730,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"Keyprime is a class act. They went above and beyond my expectations on repairing my roof after hail damage. They also did our deck railing replacement and exceeded expectations on that as well. Highly recommend!"</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">MG</div>
-                <div><strong>Matt G.</strong><span>Lakeville, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"I am grateful to have been guided through the paperwork and delighted with their thoroughness. Every question I had was answered promptly and attentively. I would recommend Keyprime to anyone looking for quality work."</p>
+              <p>"William was fantastic with our window inspection — he found seal failures we didn't even know about. The new triple-pane windows they installed are amazing. Our home is warmer and so much quieter now."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">AW</div>
                 <div><strong>Anita W.</strong><span>Minneapolis, MN</span></div>
@@ -495,16 +739,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"William and the team at Keyprime were great to work with. We had our roof and siding replaced after a hailstorm and were very pleased with the results. This was hands down the best contractor experience we've ever had."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">JV</div>
-                <div><strong>John V.</strong><span>Minneapolis, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"William was fantastic and was able to do a free inspection as well as a quote in a very timely manner. The professionalism and speed of the crew was impressive. I would highly recommend Keyprime to anyone!"</p>
+              <p>"After a bad hailstorm cracked two of our windows, Keyprime was out within 24 hours for emergency repair. They replaced the damaged glass the same week. Fast, reliable, and the quality is outstanding."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">MS</div>
                 <div><strong>Megan S.</strong><span>Minneapolis, MN</span></div>
@@ -513,16 +748,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"William communicated throughout the entire three-day roof job. The crew cleaned up each day, and William followed up afterward to make sure everything was perfect. Outstanding service from start to finish."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">AA</div>
-                <div><strong>Andrew A.</strong><span>Chanhassen, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"The professionals at Keyprime were top-notch. They met and exceeded all of our expectations. We would not hesitate to use them again and have already recommended them to friends and family."</p>
+              <p>"The professionals at Keyprime replaced 8 windows in our home with energy-efficient models. The installation was seamless and they left the place spotless. We would not hesitate to recommend them."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">LG</div>
                 <div><strong>Lori G.</strong><span>Burnsville, MN</span></div>
@@ -531,16 +757,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"We had siding, soffit and fascia, and a Trex deck done by Keyprime. The schedule, materials, communication, and performance were all excellent. We would absolutely hire them again."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">SC</div>
-                <div><strong>Stephen C.</strong><span>Burnsville, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"William communicated well, replied promptly to all of my questions, and made the entire process smooth and efficient. Keyprime made what could have been a stressful project completely painless."</p>
+              <p>"Keyprime winterized all our windows — new weatherstripping, caulking, and storm window installation. The drafts are completely gone. William communicated well throughout and the price was very fair."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">DC</div>
                 <div><strong>Dean C.</strong><span>St. Paul, MN</span></div>
@@ -549,16 +766,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"The crews were professional, on time, cooperative, and informative throughout the project. We were very pleased with the whole experience and the quality of the finished work."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">RW</div>
-                <div><strong>Russ W.</strong><span>Minneapolis, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"Completed on time and on budget. Project manager William communicated well throughout the project, documentation was excellent, and we would highly recommend Keyprime without hesitation."</p>
+              <p>"We had our old single-pane windows replaced with Heartland's Ultra Series vinyl windows. The argon-filled triple glazing makes a huge difference — our home stays warm even in the worst cold snaps."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">BR</div>
                 <div><strong>Barb R.</strong><span>Bloomington, MN</span></div>
@@ -567,43 +775,7 @@
 
             <div class="testimonial-card">
               <div class="testimonial-card__stars"></div>
-              <p>"Keyprime communicates well, is professional, and completes jobs exactly as stated. We absolutely loved the experience and wouldn't hesitate to recommend them to anyone."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">CL</div>
-                <div><strong>Corrie L.</strong><span>Blaine, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"Would use Keyprime again without a doubt. The crew did excellent work, and William and Nick answered all of our questions promptly. Very satisfied with the results."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">JW</div>
-                <div><strong>Jerry W.</strong><span>Forest Lake, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"Keyprime went above and beyond past contractors we've worked with. William even appeared before the city council to get approval to work in our town. That level of dedication is rare."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">LC</div>
-                <div><strong>Linda C.</strong><span>Lino Lakes, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"David helped us plan the project and navigate the insurance process. The crew finished everything in one day and cleaned up well. We're very happy with the results."</p>
-              <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">MH</div>
-                <div><strong>Michelle H.</strong><span>Minneapolis, MN</span></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-card__stars"></div>
-              <p>"If something ever goes wrong, I know Keyprime will take care of it. They don't just say it — they mean it. Their warranty is real, and that gives us peace of mind."</p>
+              <p>"If something ever goes wrong with our windows, I know Keyprime will take care of it. Their TRUE Lifetime Warranty covers workmanship and product — that gives us real peace of mind through every Minnesota winter."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">KH</div>
                 <div><strong>Keyprime Homeowner</strong><span>Minnesota</span></div>
@@ -855,6 +1027,7 @@
               <h4>Company</h4>
               <ul>
                 <li><a href="#process">Our Process</a></li>
+                <li><a href="#heartland">Heartland Windows</a></li>
                 <li><a href="#warranty">Our Warranty</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -896,6 +1069,6 @@
     <div class="frost__blur"></div>
   </div>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 </html>
