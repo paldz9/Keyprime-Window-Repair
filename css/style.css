@@ -269,10 +269,10 @@ ul { list-style: none; }
 }
 .hero__heading {
   font-family: var(--font-hero);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 700; line-height: 1.1;
-  color: var(--blk); letter-spacing: .06em;
-  margin-bottom: 20px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700; line-height: 1.15;
+  color: var(--blk); letter-spacing: .04em;
+  margin-bottom: 16px;
 }
 .hero__body {
   border-left: 4px solid var(--red);
