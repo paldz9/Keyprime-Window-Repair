@@ -128,11 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Product tabs — 3-column selector ── */
   const productData = [
-    { desc: 'Low-maintenance, energy-efficient frames with fusion-welded corners, argon-filled double or triple glazing, and Low-E coatings. Built to last decades without fading, peeling, or warping.', img: 'assets/images/products/vinyl-windows.png', alt: 'Vinyl Windows' },
-    { desc: 'The best of both worlds — a wood interior for warmth and beauty, with an aluminum, fiberglass, or vinyl exterior that fights the elements. Hail-resistant with strong air-infiltration ratings.', img: 'assets/images/products/clad-windows.png', alt: 'Clad Windows' },
-    { desc: 'Solid wood frames in pine, oak, maple, or mahogany with custom stains and strong insulating value. Perfect for historic homes and luxury rebuilds — we can match any existing millwork profile.', img: 'assets/images/products/wood-windows.png', alt: 'Wood Windows' },
-    { desc: 'Maximum insulation for the harshest climates. Three layers of glass with argon gas fill block cold transfer and reduce noise dramatically — ideal for Minnesota winters.', img: 'assets/images/products/triple-pane-glass.png', alt: 'Triple-Pane Glass' },
-    { desc: 'High-security steel, insulated fiberglass, sliding patio, and French multi-slide doors — custom-fit for energy efficiency, curb appeal, and lasting durability.', img: 'assets/images/products/entry-patio-doors.png', alt: 'Entry & Patio Doors' }
+    { desc: 'Low-maintenance, energy-efficient frames with fusion-welded corners, argon-filled double or triple glazing, and Low-E coatings. Built to last decades without fading, peeling, or warping.', img: 'assets/images/products/vinyl-windows.jpg', alt: 'Vinyl Windows' },
+    { desc: 'The best of both worlds — a wood interior for warmth and beauty, with an aluminum, fiberglass, or vinyl exterior that fights the elements. Hail-resistant with strong air-infiltration ratings.', img: 'assets/images/products/clad-windows.jpg', alt: 'Clad Windows' },
+    { desc: 'Solid wood frames in pine, oak, maple, or mahogany with custom stains and strong insulating value. Perfect for historic homes and luxury rebuilds — we can match any existing millwork profile.', img: 'assets/images/products/wood-windows.jpg', alt: 'Wood Windows' },
+    { desc: 'Maximum insulation for the harshest climates. Three layers of glass with argon gas fill block cold transfer and reduce noise dramatically — ideal for Minnesota winters.', img: 'assets/images/products/triple-pane-glass.jpg', alt: 'Triple-Pane Glass' },
+    { desc: 'High-security steel, insulated fiberglass, sliding patio, and French multi-slide doors — custom-fit for energy efficiency, curb appeal, and lasting durability.', img: 'assets/images/products/entry-patio-doors.jpg', alt: 'Entry & Patio Doors' }
   ];
 
   const productBtns = document.querySelectorAll('.products__item');
@@ -352,42 +352,86 @@ document.addEventListener('DOMContentLoaded', () => {
       return '<div class="heartland__feature"><div class="heartland__feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div><div><strong>' + text.split(' — ')[0] + '</strong>' + (text.indexOf(' — ') > -1 ? '<span>' + text.split(' — ')[1] + '</span>' : '') + '</div></div>';
     }
 
-    function showSeries(s) {
-      seriesTitle.textContent = s.label;
-      seriesTagline.textContent = s.tagline;
-      seriesDesc.textContent = s.desc;
-      seriesFeatures.innerHTML = s.features.map(featureHTML).join('');
-      seriesImg.src = s.img;
-      seriesImg.alt = s.label + ' window diagram';
-      if (s.img2 && seriesImg2Wrap) {
-        seriesImg2.src = s.img2;
-        seriesImg2.alt = s.label + ' — double hung configuration';
-        seriesImg2Wrap.style.display = '';
-      } else if (seriesImg2Wrap) {
-        seriesImg2Wrap.style.display = 'none';
+    var seriesPanel = document.querySelector('.heartland__series-panel');
+
+    function showSeries(s, animate) {
+      function apply() {
+        seriesTitle.textContent = s.label;
+        seriesTagline.textContent = s.tagline;
+        seriesDesc.textContent = s.desc;
+        seriesFeatures.innerHTML = s.features.map(featureHTML).join('');
+        seriesImg.src = s.img;
+        seriesImg.alt = s.label + ' window diagram';
+        if (s.img2 && seriesImg2Wrap) {
+          seriesImg2.src = s.img2;
+          seriesImg2.alt = s.label + ' — double hung configuration';
+          seriesImg2Wrap.style.display = '';
+        } else if (seriesImg2Wrap) {
+          seriesImg2Wrap.style.display = 'none';
+        }
+        if (animate && seriesPanel) {
+          seriesPanel.style.opacity = '0';
+          seriesPanel.style.transform = 'translateY(10px)';
+          requestAnimationFrame(function() {
+            seriesPanel.style.transition = 'opacity .4s ease, transform .4s ease';
+            seriesPanel.style.opacity = '1';
+            seriesPanel.style.transform = 'none';
+          });
+        }
+      }
+      if (animate && seriesPanel) {
+        seriesPanel.style.transition = 'opacity .25s ease, transform .25s ease';
+        seriesPanel.style.opacity = '0';
+        seriesPanel.style.transform = 'translateY(-6px)';
+        setTimeout(apply, 250);
+      } else {
+        apply();
       }
     }
 
-    function showType(typeKey) {
+    var detailSection = document.querySelector('.heartland__detail');
+
+    function showType(typeKey, animate) {
       var t = types[typeKey];
       if (!t) return;
-      detailType.textContent = t.label;
-      detailDesc.textContent = t.desc;
 
-      tabsWrap.innerHTML = '';
-      t.series.forEach(function(s, i) {
-        var btn = document.createElement('button');
-        btn.className = 'heartland__tab' + (i === 0 ? ' heartland__tab--active' : '');
-        btn.textContent = s.label;
-        btn.addEventListener('click', function() {
-          tabsWrap.querySelectorAll('.heartland__tab').forEach(function(b) { b.classList.remove('heartland__tab--active'); });
-          btn.classList.add('heartland__tab--active');
-          showSeries(s);
+      function applyType() {
+        detailType.textContent = t.label;
+        detailDesc.textContent = t.desc;
+
+        tabsWrap.innerHTML = '';
+        t.series.forEach(function(s, i) {
+          var btn = document.createElement('button');
+          btn.className = 'heartland__tab' + (i === 0 ? ' heartland__tab--active' : '');
+          btn.textContent = s.label;
+          btn.addEventListener('click', function() {
+            tabsWrap.querySelectorAll('.heartland__tab').forEach(function(b) { b.classList.remove('heartland__tab--active'); });
+            btn.classList.add('heartland__tab--active');
+            showSeries(s, true);
+          });
+          tabsWrap.appendChild(btn);
         });
-        tabsWrap.appendChild(btn);
-      });
 
-      showSeries(t.series[0]);
+        showSeries(t.series[0], false);
+
+        if (animate && detailSection) {
+          detailSection.style.opacity = '0';
+          detailSection.style.transform = 'translateY(12px)';
+          requestAnimationFrame(function() {
+            detailSection.style.transition = 'opacity .45s ease, transform .45s ease';
+            detailSection.style.opacity = '1';
+            detailSection.style.transform = 'none';
+          });
+        }
+      }
+
+      if (animate && detailSection) {
+        detailSection.style.transition = 'opacity .2s ease';
+        detailSection.style.opacity = '0';
+        setTimeout(applyType, 200);
+      } else {
+        applyType();
+      }
 
       if (t.shapes && shapesWrap) {
         shapesWrap.style.display = '';
@@ -410,6 +454,46 @@ document.addEventListener('DOMContentLoaded', () => {
     var prevBtn = document.getElementById('hCarouselPrev');
     var nextBtn = document.getElementById('hCarouselNext');
 
+    function splitChars() {
+      cardsArr.forEach(function(card) {
+        var label = card.querySelector('.heartland__type-label');
+        if (label) return;
+        var span = card.querySelector('span');
+        if (!span) return;
+        var text = span.textContent.trim();
+        var wrapper = document.createElement('span');
+        wrapper.className = 'heartland__type-label';
+        for (var i = 0; i < text.length; i++) {
+          var ch = document.createElement('i');
+          ch.className = text[i] === ' ' ? 'hchar hchar--space' : 'hchar';
+          ch.textContent = text[i] === ' ' ? ' ' : text[i];
+          wrapper.appendChild(ch);
+        }
+        var line = document.createElement('i');
+        line.className = 'hchar-line';
+        wrapper.appendChild(line);
+        span.parentNode.replaceChild(wrapper, span);
+      });
+    }
+
+    function revealChars(card, delay) {
+      var chars = card.querySelectorAll('.hchar');
+      chars.forEach(function(ch, i) {
+        ch.style.transitionDelay = (delay + i * 30) + 'ms';
+      });
+      var line = card.querySelector('.hchar-line');
+      if (line) line.style.transitionDelay = (delay + chars.length * 30 + 50) + 'ms';
+      card.classList.add('heartland__type-card--reveal');
+    }
+
+    function resetChars(card) {
+      card.classList.remove('heartland__type-card--reveal');
+      var chars = card.querySelectorAll('.hchar');
+      chars.forEach(function(ch) { ch.style.transitionDelay = ''; });
+      var line = card.querySelector('.hchar-line');
+      if (line) line.style.transitionDelay = '';
+    }
+
     function buildDots() {
       if (!dotsWrap) return;
       dotsWrap.innerHTML = '';
@@ -417,38 +501,88 @@ document.addEventListener('DOMContentLoaded', () => {
         var dot = document.createElement('button');
         dot.className = 'heartland__dot' + (i === 0 ? ' heartland__dot--active' : '');
         dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.addEventListener('click', function() { goTo(i); });
+        dot.addEventListener('click', function() { goTo(i, i > currentIdx ? 'left' : 'right'); });
         dotsWrap.appendChild(dot);
       });
     }
 
-    function updateSlider() {
-      cardsArr.forEach(function(c, i) {
-        c.classList.toggle('heartland__type-card--active', i === currentIdx);
-      });
+    var sliding = false;
+    var slideDuration = 500;
+
+    function updateCounter() {
+      if (counterEl) {
+        var n = String(currentIdx + 1);
+        counterEl.innerHTML = '<strong>' + (n.length < 2 ? '0' + n : n) + '</strong> / ' + (cardsArr.length < 10 ? '0' : '') + cardsArr.length;
+      }
       if (dotsWrap) {
         var dots = dotsWrap.querySelectorAll('.heartland__dot');
         dots.forEach(function(d, i) {
           d.classList.toggle('heartland__dot--active', i === currentIdx);
         });
       }
-      if (counterEl) {
-        var n = String(currentIdx + 1);
-        counterEl.innerHTML = '<strong>' + (n.length < 2 ? '0' + n : n) + '</strong> / ' + (cardsArr.length < 10 ? '0' : '') + cardsArr.length;
-      }
-      showType(cardsArr[currentIdx].dataset.type);
     }
 
-    function goTo(idx) {
-      currentIdx = (idx + cardsArr.length) % cardsArr.length;
-      updateSlider();
+    function goTo(idx, direction) {
+      var newIdx = (idx + cardsArr.length) % cardsArr.length;
+      if (newIdx === currentIdx || sliding) return;
+      sliding = true;
+
+      if (!direction) direction = newIdx > currentIdx ? 'left' : 'right';
+
+      var oldCard = cardsArr[currentIdx];
+      var newCard = cardsArr[newIdx];
+
+      // Reset chars on old card immediately
+      resetChars(oldCard);
+
+      // 1. Place new card adjacent with no transition
+      newCard.classList.add('heartland__type-card--active');
+      newCard.style.transform = direction === 'left' ? 'translateX(100%)' : 'translateX(-100%)';
+      oldCard.style.transform = 'translateX(0)';
+
+      // 2. Force reflow so the browser registers start positions
+      void newCard.offsetWidth;
+
+      // 3. Enable transitions on both and slide them together
+      oldCard.classList.add('heartland__type-card--sliding');
+      newCard.classList.add('heartland__type-card--sliding');
+
+      requestAnimationFrame(function() {
+        oldCard.style.transform = direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)';
+        newCard.style.transform = 'translateX(0)';
+      });
+
+      // 4. Stagger-reveal characters on new card after slide starts
+      revealChars(newCard, 200);
+
+      currentIdx = newIdx;
+      updateCounter();
+      showType(cardsArr[currentIdx].dataset.type, true);
+
+      setTimeout(function() {
+        oldCard.classList.remove('heartland__type-card--active', 'heartland__type-card--sliding');
+        oldCard.style.transform = '';
+        newCard.classList.remove('heartland__type-card--sliding');
+        newCard.style.transform = '';
+        sliding = false;
+      }, slideDuration + 50);
+    }
+
+    function initSlider() {
+      splitChars();
+      cardsArr.forEach(function(c, i) {
+        c.classList.toggle('heartland__type-card--active', i === currentIdx);
+      });
+      revealChars(cardsArr[currentIdx], 0);
+      updateCounter();
+      showType(cardsArr[currentIdx].dataset.type, false);
     }
 
     buildDots();
-    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(currentIdx - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(currentIdx + 1); });
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(currentIdx - 1, 'right'); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(currentIdx + 1, 'left'); });
 
-    updateSlider();
+    initSlider();
   })();
 
   /* ── FAQ accordion ── */

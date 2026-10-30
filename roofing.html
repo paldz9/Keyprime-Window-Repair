@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roofing Services | Keyprime Roofing</title>
+  <meta name="description" content="Minnesota's favorite roofing contractor. Asphalt shingles, cedar shakes, metal roofs, and more — backed by a True Lifetime Warranty and GAF Master Elite certification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/roofing.css">
+  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar" id="topBar">
+    <div class="top-bar__inner">
+      <span class="top-bar__warranty">TRUE LIFETIME WARRANTY&trade;</span>
+      <span class="top-bar__sep">&middot;</span>
+      <a href="tel:+19525223705" class="top-bar__phone">+1 (952) 522-3705</a>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar--hero" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime Inc." class="navbar__logo-img navbar__logo-img--white">
+        <img src="assets/logos/keyprime-logo-color.png" alt="Keyprime Inc." class="navbar__logo-img navbar__logo-img--color">
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item">
+          <a href="https://keyprimeroofing.com" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/about" class="navbar__link">About Us <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="https://keyprimeroofing.com/about">Our Story</a></li>
+            <li><a href="https://keyprimeroofing.com/reviews">Reviews</a></li>
+            <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/services" class="navbar__link">Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="index.html#services">Window Repair</a></li>
+            <li><a href="roofing.html">Roofing</a></li>
+            <li><a href="storm.html">Storm Damage</a></li>
+            <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
+            <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
+            <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
+            <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/projects" class="navbar__link">Projects <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="https://keyprimeroofing.com/projects">Gallery</a></li>
+            <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="warranty.html" class="navbar__link">Warranty</a>
+        </li>
+        <li class="navbar__item navbar__item--dropdown">
+          <a href="https://keyprimeroofing.com/contact" class="navbar__link">Contact Us <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <ul class="navbar__dropdown">
+            <li><a href="https://keyprimeroofing.com/contact">Get in Touch</a></li>
+            <li><a href="https://keyprimeroofing.com/free-estimate">Free Estimate</a></li>
+            <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="https://keyprimeroofing.com/free-estimate" class="navbar__link navbar__link--cta">GET A FREE QUOTE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar__accent"></div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <!-- Background 1: underlay video (always visible) -->
+    <div class="hero__underlay">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="assets/videos/roofing-hero-underlay.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Background 2: overlay image (revealed on hover via canvas) -->
+    <canvas id="revealCanvas" class="reveal-canvas"></canvas>
+    <img src="assets/images/roofing-hero-overlay.png" alt="" id="overlayImg" class="hero__overlay-img">
+    <div class="hero__overlay"></div>
+
+    <!-- Hero text content -->
+    <div class="hero__content">
+      <h1 class="hero__heading hero-anim">It Starts at the Top</h1>
+      <h2 class="hero__sub hero-anim" data-delay="200">Your roof is the first line of defense in protecting your most valuable asset</h2>
+      <p class="hero__text hero-anim" data-delay="400">We combine superior craftsmanship with premium building materials and personalized service. Asphalt shingles, cedar shakes, and metal roofs &mdash; we carry them all (and more) for your home.</p>
+      <p class="hero__text hero-anim" data-delay="550">Keyprime is a GAF Master Elite certified contractor &mdash; a mark of excellence held by only the top 2% of roofing contractors in North America.</p>
+      <a href="https://keyprimeroofing.com/free-estimate" class="btn btn--hero-fill hero-anim" data-delay="700">GET FREE QUOTE</a>
+    </div>
+
+    <!-- Partner logos marquee -->
+    <div class="hero__partners">
+      <div class="partners__track">
+        <img src="assets/logos/coatings-pro+.png" alt="CoatingsPro+">
+        <img src="assets/logos/gaf.png" alt="GAF">
+        <img src="assets/logos/mrca.png" alt="MRCA">
+        <img src="assets/logos/bbb.png" alt="BBB">
+        <img src="assets/logos/mule-hide.png" alt="Mule-Hide">
+        <img src="assets/logos/nrca.png" alt="NRCA">
+        <img src="assets/logos/owens-corning.png" alt="Owens Corning">
+        <img src="assets/logos/velux.png" alt="Velux">
+        <img src="assets/logos/coatings-pro+.png" alt="CoatingsPro+">
+        <img src="assets/logos/gaf.png" alt="GAF">
+        <img src="assets/logos/mrca.png" alt="MRCA">
+        <img src="assets/logos/bbb.png" alt="BBB">
+        <img src="assets/logos/mule-hide.png" alt="Mule-Hide">
+        <img src="assets/logos/nrca.png" alt="NRCA">
+        <img src="assets/logos/owens-corning.png" alt="Owens Corning">
+        <img src="assets/logos/velux.png" alt="Velux">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCROLLABLE PAGE CONTENT ===== -->
+  <div class="page-content">
+
+    <!-- ===== ROOFING PRODUCTS ===== -->
+    <section class="services">
+      <div class="services__bg" data-parallax="0.1">
+        <img src="assets/images/storm-hero-desktop.png" alt="" loading="lazy">
+      </div>
+      <div class="services__overlay"></div>
+      <div class="products" id="products">
+        <h2 class="products__heading anim-in">Roofing Solutions<br>for Every Home</h2>
+        <div class="products__body">
+          <div class="products__info">
+            <p class="products__desc anim-in" data-delay="200" id="productDesc">America&rsquo;s most popular residential roof type with fast installation and vast color and style options. Durable protection that can last up to 50 years.</p>
+          </div>
+          <div class="products__list">
+            <button class="products__item products__item--active" data-index="0">
+              <span class="products__num">1.</span>
+              <span class="products__name">Asphalt Shingles</span>
+            </button>
+            <button class="products__item" data-index="1">
+              <span class="products__num">2.</span>
+              <span class="products__name">Cedar Shake</span>
+            </button>
+            <button class="products__item" data-index="2">
+              <span class="products__num">3.</span>
+              <span class="products__name">Metal Roofs</span>
+            </button>
+            <button class="products__item" data-index="3">
+              <span class="products__num">4.</span>
+              <span class="products__name">Roof Coatings</span>
+            </button>
+            <button class="products__item" data-index="4">
+              <span class="products__num">5.</span>
+              <span class="products__name">Flat Roofs / Low Slope</span>
+            </button>
+          </div>
+          <div class="products__image" id="productImageWrap">
+            <img src="assets/images/products/asphalt-shingles.jpg" alt="Asphalt Shingles" id="productImg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROOF REPAIR ===== -->
+    <section class="repair">
+      <div class="container">
+        <div class="repair__inner">
+          <div class="repair__text anim-in">
+            <span class="tag">Expert Care</span>
+            <h2 class="repair__heading anim-in" data-delay="100">Roof Repair</h2>
+            <p class="anim-in" data-delay="200">From the depths of winter to the dog days of summer, your home's roof shields you from the worst mother nature can throw at you. When damage appears, call us to quickly restore the performance of your roof.</p>
+            <p class="anim-in" data-delay="300">Small problems left unchecked cost homeowners thousands in interior water damage. Our crew will give you an honest assessment of your damage and work with you to find a solution in your budget.</p>
+            <a href="https://keyprimeroofing.com/free-estimate" class="btn btn--primary anim-in" data-delay="400">SCHEDULE A FREE INSPECTION</a>
+          </div>
+          <div class="repair__cert anim-in" data-delay="300">
+            <div class="cert-card">
+              <img src="assets/logos/gaf.png" alt="GAF Master Elite" class="cert-card__logo">
+              <h3>Elite Really Means ELITE</h3>
+              <p>GAF Master Elite Certification is a mark of excellence in the roofing industry. This certification is only given to the top 2% of roofing contractors in North America who have met rigorous standards for quality, reliability, and customer service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq__header">
+          <span class="tag anim-in">FAQ</span>
+          <h2 class="faq__heading anim-in" data-delay="100">Common Questions About Roofing</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item anim-in" data-delay="0" open>
+            <summary>What should I do if I have a leaky roof?</summary>
+            <div class="faq__answer">
+              <p>If your ceiling is cracked, sagging, or has water stains on it, you likely have a leaky roof. You should act quickly to move things out of the way, contain the water, and alleviate the water pressure if your ceiling is sagging. Then, call a roofing contractor like Keyprime to get a professional opinion regarding short-term and long-term solutions. Ultimately, you'll need to locate the leak, and get your roof repaired. If the leak is related to an insurance claim, Keyprime can assist with the claim process.</p>
+            </div>
+          </details>
+          <details class="faq__item anim-in" data-delay="80">
+            <summary>Why are asphalt shingles so popular for roofs in Minnesota?</summary>
+            <div class="faq__answer">
+              <p>Asphalt shingles are the most affordable roofing material available, and the least expensive material to install. They also come in a variety of colors to match any home. Asphalt shingles are relatively durable and can last up to 50 years with proper maintenance and inspections. For best results, asphalt shingles should be installed by a roofing contractor.</p>
+            </div>
+          </details>
+          <details class="faq__item anim-in" data-delay="160">
+            <summary>Why are metal roofs a good choice for Minnesota homes?</summary>
+            <div class="faq__answer">
+              <p>With a lifespan of up to 70 years or more, today's metal roofing options offer homeowners a lifetime of worry-free roofing, even in a tough Midwestern climate. Their fireproof quality can lower insurance costs, and their contemporary look is a beautiful way to modernize your home.</p>
+            </div>
+          </details>
+          <details class="faq__item anim-in" data-delay="240">
+            <summary>Why should I have my roofing contractor work directly with my insurance provider?</summary>
+            <div class="faq__answer">
+              <p>Keyprime not only inspects roofs for storm damage, but can also work directly with your insurance provider to get the damage repaired quickly with no upfront cost to you. Keyprime employs a team of experienced professionals that specialize in working through insurance claims to make sure they are processed properly and on time.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <div class="cta__bg" data-parallax="0.18">
+        <img src="assets/images/team-photo.png" alt="" loading="lazy">
+      </div>
+      <div class="cta__overlay"></div>
+      <div class="container cta__content">
+        <h2 class="anim-in">Let's Talk.</h2>
+        <p class="anim-in" data-delay="100">Click below to complete our form. You'll be promptly contacted by a Keyprime representative.</p>
+        <a href="https://keyprimeroofing.com/free-estimate" class="btn btn--cta-light btn--lg anim-in" data-delay="200">Get A Free Quote</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Desktop footer -->
+        <div class="footer__top">
+          <div class="footer__brand">
+            <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime Inc." width="140">
+            <div class="footer__tagline">
+              <p>Local expertise and Minnesota values.<br>We understand Minnesota homes,<br>Minnesota weather, and Minnesota<br>homeowners.<br>A process built around doing things right.<br>One standard: done correctly.</p>
+            </div>
+            <div class="footer__social">
+              <a href="https://www.facebook.com/keyprimeroofing" aria-label="Facebook"><img src="assets/icons/fb-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.instagram.com/keyprimeroofing" aria-label="Instagram"><img src="assets/icons/ig-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.linkedin.com/company/keyprimeroofing" aria-label="LinkedIn"><img src="assets/icons/linkedin-icon.png" alt="" class="social-icon"></a>
+            </div>
+          </div>
+          <div class="footer__links">
+            <div class="footer__col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="https://keyprimeroofing.com/about">About Us</a></li>
+                <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
+                <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
+                <li><a href="https://keyprimeroofing.com/financing">Financing</a></li>
+                <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
+                <li><a href="warranty.html">Warranty</a></li>
+                <li><a href="https://keyprimeroofing.com/contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer__col footer__col--services">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="roofing.html">Roofing</a></li>
+                <li><a href="index.html#services">Windows &amp; Doors</a></li>
+                <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
+                <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
+                <li><a href="https://keyprimeroofing.com/services/fortified-roofing">Fortified Roofing</a></li>
+              </ul>
+              <ul>
+                <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
+                <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
+                <li><a href="https://keyprimeroofing.com/tree-damage">Tree Damage</a></li>
+                <li><a href="storm.html">Storm Damage</a></li>
+                <li><a href="https://keyprimeroofing.com/expert-restoration">Expert Restoration</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="https://keyprimeroofing.com/partners">Partners</a></li>
+                <li><a href="https://keyprimeroofing.com/reviews">Reviews</a></li>
+                <li><a href="https://keyprimeroofing.com/equipment">Equipments</a></li>
+                <li><a href="#faq">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="footer__col footer__col--newsletter">
+              <h4>Newsletter</h4>
+              <p class="footer__nl-desc">Stay updated on our latest projects, campaigns, discounts, and more.</p>
+              <form class="footer__newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit" aria-label="Subscribe">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile footer links -->
+        <div class="footer__links--mobile">
+          <div class="footer__col--mobile">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="https://keyprimeroofing.com/about">About Us</a></li>
+              <li><a href="https://keyprimeroofing.com/hiring">Careers</a></li>
+              <li><a href="https://keyprimeroofing.com/blog">Blog</a></li>
+              <li><a href="https://keyprimeroofing.com/financing">Financing</a></li>
+              <li><a href="https://keyprimeroofing.com/referral-program">Referral Program</a></li>
+              <li><a href="warranty.html">Warranty</a></li>
+              <li><a href="https://keyprimeroofing.com/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col--mobile footer__col--services-mobile">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="roofing.html">Roofing</a></li>
+              <li><a href="index.html#services">Windows &amp; Doors</a></li>
+              <li><a href="https://keyprimeroofing.com/services/gutters-and-guards">Gutters &amp; Guards</a></li>
+              <li><a href="https://keyprimeroofing.com/services/siding">Siding</a></li>
+              <li><a href="https://keyprimeroofing.com/services/fortified-roofing">Fortified Roofing</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://keyprimeroofing.com/services/ice-dam-removal">Ice Dam Removal</a></li>
+              <li><a href="https://keyprimeroofing.com/services/attic-insulation">Attic Insulation</a></li>
+              <li><a href="https://keyprimeroofing.com/tree-damage">Tree Damage</a></li>
+              <li><a href="storm.html">Storm Damage</a></li>
+              <li><a href="https://keyprimeroofing.com/expert-restoration">Expert Restoration</a></li>
+            </ul>
+          </div>
+          <div class="footer__col--mobile">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://keyprimeroofing.com/partners">Partners</a></li>
+              <li><a href="https://keyprimeroofing.com/reviews">Reviews</a></li>
+              <li><a href="https://keyprimeroofing.com/equipment">Equipments</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__newsletter--mobile">
+            <h4>Newsletter</h4>
+            <p>Stay updated on our latest projects, campaigns, discounts, and more.</p>
+            <form class="footer__newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit" aria-label="Subscribe">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__bottom-left">
+            <span class="footer__copy">&copy; 2026 &nbsp; Keyprime Inc. All rights reserved.</span>
+            <span class="footer__licenses">MN License BC690664 &nbsp; WI License NO. 052300545 - DC</span>
+          </div>
+          <div class="footer__bottom-mobile">
+            <div class="footer__social">
+              <a href="https://www.facebook.com/keyprimeroofing" aria-label="Facebook"><img src="assets/icons/fb-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.instagram.com/keyprimeroofing" aria-label="Instagram"><img src="assets/icons/ig-icon.png" alt="" class="social-icon"></a>
+              <a href="https://www.linkedin.com/company/keyprimeroofing" aria-label="LinkedIn"><img src="assets/icons/linkedin-icon.png" alt="" class="social-icon"></a>
+            </div>
+            <div class="footer__tagline--mobile">
+              <p>Local expertise and Minnesota values.</p>
+              <p>We understand Minnesota homes, Minnesota weather, and Minnesota homeowners.</p>
+              <p>A process built around doing things right.</p>
+              <p>One standard: done correctly.</p>
+            </div>
+            <div class="footer__logo-bottom">
+              <img src="assets/logos/keyprime-logo-white.png" alt="Keyprime Inc.">
+            </div>
+          </div>
+          <div class="footer__legal">
+            <a href="https://keyprimeroofing.com/privacy-policy">Privacy Policy</a>
+            <span>|</span>
+            <a href="https://keyprimeroofing.com/terms-and-conditions">Terms and Conditions</a>
+            <span>|</span>
+            <a href="#">Cookies Settings</a>
+          </div>
+          <p class="footer__copy--mobile">&copy; 2026 &nbsp; Keyprime Inc.</p>
+          <p class="footer__licenses--mobile">All rights reserved. MN License BC690664 WI License NO. 052300545 - DC</p>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /.page-content -->
+
+  <!-- Side tab -->
+  <a href="https://keyprimeroofing.com/free-estimate" class="side-tab">Get Instant Quote</a>
+
+  <script src="js/roofing.js"></script>
+</body>
+</html>
